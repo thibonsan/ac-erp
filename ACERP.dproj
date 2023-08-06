@@ -143,6 +143,21 @@
             <Form>PageLayout</Form>
             <FormType>fmx</FormType>
         </DCCReference>
+        <DCCReference Include="src\view\components\buttonmenu\acerp.view.components.buttonmenu.pas">
+            <Form>ComponentButtonMenu</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="src\view\components\sidebar\acerp.view.components.sidebar.pas">
+            <Form>ComponentSidebar</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="src\services\acerp.services.utils.pas"/>
+        <RcItem Include="src\asserts\seta-triangular-apontando-para-baixo.png">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>setabaixo</ResourceId>
+        </RcItem>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -187,6 +202,12 @@
                 <DeployFile LocalName="lib\ACERP.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>ACERP.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="src\asserts\seta-triangular-apontando-para-baixo.png" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

@@ -13,13 +13,13 @@ type
     lytContainer: TLayout;
     MultiView1: TMultiView;
     Layout1: TLayout;
-    Rectangle1: TRectangle;
     lytMain: TLayout;
     Layout2: TLayout;
     lytBody: TLayout;
     recBackground: TRectangle;
+    Button1: TButton;
   private
-    { Private declarations }
+    procedure RenderSidebar;
   public
     function Render: TFMXObject;
     procedure UnRender;
@@ -29,11 +29,19 @@ implementation
 
 {$R *.fmx}
 
+uses acerp.view.components.sidebar;
+
 { TPageLayout }
 
 function TPageLayout.Render: TFMXObject;
 begin
+  RenderSidebar;
   Result := lytContainer;
+end;
+
+procedure TPageLayout.RenderSidebar;
+begin
+  Layout1.AddObject(TComponentSidebar.New(Self).Component);
 end;
 
 procedure TPageLayout.UnRender;
