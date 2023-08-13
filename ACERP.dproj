@@ -143,8 +143,8 @@
             <Form>PageLayout</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="src\view\components\buttonmenu\acerp.view.components.buttonmenu.pas">
-            <Form>ComponentButtonMenu</Form>
+        <DCCReference Include="src\view\components\buttonmenu\acerp.view.components.button.pas">
+            <Form>ComponentButton</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
@@ -157,6 +157,22 @@
         <RcItem Include="src\asserts\seta-triangular-apontando-para-baixo.png">
             <ResourceType>RCDATA</ResourceType>
             <ResourceId>setabaixo</ResourceId>
+        </RcItem>
+        <RcItem Include="src\asserts\banco.png">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>banco</ResourceId>
+        </RcItem>
+        <RcItem Include="src\asserts\grupo-de-usuarios.png">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>pessoas</ResourceId>
+        </RcItem>
+        <RcItem Include="src\asserts\perfil.jpg">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>darth</ResourceId>
+        </RcItem>
+        <RcItem Include="src\asserts\cadastro.png">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>cadastros</ResourceId>
         </RcItem>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
@@ -202,6 +218,30 @@
                 <DeployFile LocalName="lib\ACERP.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>ACERP.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="src\asserts\banco.png" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="src\asserts\cadastro.png" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="src\asserts\grupo-de-usuarios.png" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="src\asserts\perfil.jpg" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

@@ -15,11 +15,12 @@ type
     Layout3: TLayout;
     Line1: TLine;
     Line2: TLine;
-    Layout4: TLayout;
+    lytProfile: TLayout;
     lytMenu: TLayout;
     Rectangle1: TRectangle;
   private
     procedure ConstruirMenu;
+    procedure ConstruirPerfil;
   public
     class function New(AOwner: TComponent): TComponentSidebar;
     function Component:TFMXObject;
@@ -29,20 +30,64 @@ implementation
 
 {$R *.fmx}
 
-uses acerp.view.components.buttonmenu;
+uses
+  System.Generics.Collections,
+  acerp.view.components.button;
 
 { TComponentSidebar }
 
 function TComponentSidebar.Component: TFMXObject;
 begin
   ConstruirMenu;
+  ConstruirPerfil;
   Result := lytContainer;
 end;
 
 procedure TComponentSidebar.ConstruirMenu;
 begin
+  var lListaBotoes := TObjectList<TFmxObject>.Create;
+
+  lListaBotoes.Add(
+    TComponentButton.New(Self)
+      .Nome('pessoas')
+      .SingleButton
+      .Descricao('Pessoas')
+      .Imagem('pessoas')
+      .ColorDefault($FFFFFFFF)
+      .Component);
+
   lytMenu.AddObject(
-    TComponentButtonMenu.New(Self).Component);
+    TComponentButton.New(Self)
+      .Nome('dashboard')
+      .SingleButton
+      .Descricao('Dashboard')
+      .Imagem('banco')
+      .ColorDefault($FFFFFFFF)
+      .Alinhamento(TAlignLayout.Top)
+      .Component);
+
+  lytMenu.AddObject(
+    TComponentButton.New(Self)
+      .Nome('cadastros')
+      .CompositeButton
+      .SubMenu(lListaBotoes)
+      .Descricao('Cadastros')
+      .Imagem('cadastros')
+      .ColorDefault($FFFFFFFF)
+      .Alinhamento(TAlignLayout.Top)
+      .Component);
+end;
+
+procedure TComponentSidebar.ConstruirPerfil;
+begin
+
+  lytProfile.AddObject(
+    TComponentButton.New(Self)
+      .Nome('perfil')
+      .Perfil('darth')
+      .Descricao('Darth Vader')
+      .ColorDefault($FFFFFFFF)
+      .Component);
 end;
 
 class function TComponentSidebar.New(AOwner: TComponent): TComponentSidebar;

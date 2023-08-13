@@ -52,14 +52,14 @@ object PageLayout: TPageLayout
     end
     object MultiView1: TMultiView
       MasterButton = Button1
-      NavigationPaneOptions.CollapsedWidth = 60.000000000000000000
+      NavigationPaneOptions.CollapsedWidth = 80.000000000000000000
       Size.Width = 250.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
       object Layout1: TLayout
         Align = Client
-        Size.Width = 60.000000000000000000
+        Size.Width = 80.000000000000000000
         Size.Height = 480.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
