@@ -1,0 +1,154 @@
+object ComponentCard: TComponentCard
+  Size.Width = 239.000000000000000000
+  Size.Height = 143.000000000000000000
+  Size.PlatformDefault = False
+  object lytContainer: TLayout
+    Align = Client
+    Padding.Left = 10.000000000000000000
+    Padding.Right = 10.000000000000000000
+    Size.Width = 239.000000000000000000
+    Size.Height = 143.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Rectangle1: TRectangle
+      Align = Client
+      Fill.Color = claWhite
+      Padding.Left = 10.000000000000000000
+      Padding.Top = 10.000000000000000000
+      Padding.Right = 10.000000000000000000
+      Padding.Bottom = 10.000000000000000000
+      Size.Width = 219.000000000000000000
+      Size.Height = 143.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 10.000000000000000000
+      YRadius = 10.000000000000000000
+      object lytTitulo: TLayout
+        Align = Top
+        Padding.Left = 10.000000000000000000
+        Padding.Top = 10.000000000000000000
+        Padding.Bottom = 20.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 10.000000000000000000
+        Size.Width = 199.000000000000000000
+        Size.Height = 72.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object Layout3: TLayout
+          Align = Client
+          Size.Width = 189.000000000000000000
+          Size.Height = 42.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object Layout4: TLayout
+            Align = Left
+            Size.Width = 42.000000000000000000
+            Size.Height = 42.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            object ImageTitulo: TImage
+              MultiResBitmap = <
+                item
+                end>
+              Align = Client
+              Size.Width = 42.000000000000000000
+              Size.Height = 42.000000000000000000
+              Size.PlatformDefault = False
+            end
+          end
+          object Layout5: TLayout
+            Align = Client
+            Size.Width = 147.000000000000000000
+            Size.Height = 42.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            object lblTitulo: TLabel
+              Align = Top
+              StyledSettings = [Family, Style]
+              Size.Width = 147.000000000000000000
+              Size.Height = 20.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.Font.Size = 15.000000000000000000
+              TextSettings.FontColor = xFFD8B59A
+              TextSettings.HorzAlign = Trailing
+              Text = 'lblTitulo'
+              TabOrder = 0
+            end
+            object lblSubTitulo: TLabel
+              Align = Client
+              StyledSettings = [Family, Style, FontColor]
+              Size.Width = 147.000000000000000000
+              Size.Height = 22.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.Font.Size = 25.000000000000000000
+              TextSettings.HorzAlign = Trailing
+              Text = 'lblSubTitulo'
+              TabOrder = 1
+            end
+          end
+        end
+      end
+      object lytRodape: TLayout
+        Align = Client
+        Size.Width = 199.000000000000000000
+        Size.Height = 51.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object Line1: TLine
+          Align = Top
+          LineType = Top
+          Size.Width = 199.000000000000000000
+          Size.Height = 1.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = xFFE5E5E5
+        end
+        object Layout1: TLayout
+          Align = Left
+          Padding.Top = 15.000000000000000000
+          Padding.Bottom = 15.000000000000000000
+          Position.Y = 1.000000000000000000
+          Size.Width = 20.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          object ImageRodape: TImage
+            MultiResBitmap = <
+              item
+              end>
+            Align = Client
+            Size.Width = 20.000000000000000000
+            Size.Height = 20.000000000000000000
+            Size.PlatformDefault = False
+          end
+        end
+        object Layout2: TLayout
+          Align = Client
+          Padding.Left = 10.000000000000000000
+          Padding.Top = 10.000000000000000000
+          Padding.Bottom = 10.000000000000000000
+          Size.Width = 179.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          object lblDescricaoRodape: TLabel
+            Align = Client
+            StyledSettings = [Family, Size, Style]
+            Size.Width = 169.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.FontColor = xFFD8B59A
+            Text = 'lblDescricaoRodape'
+            TabOrder = 0
+          end
+        end
+      end
+      object ShadowEffect1: TShadowEffect
+        Distance = 3.000000000000000000
+        Direction = 45.000000000000000000
+        Softness = 0.300000011920929000
+        Opacity = 0.300000011920929000
+        ShadowColor = claBlack
+      end
+    end
+  end
+end

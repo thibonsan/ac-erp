@@ -24,14 +24,14 @@ object PageLayout: TPageLayout
     TabOrder = 0
     object lytMain: TLayout
       Align = Client
-      Margins.Left = 60.000000000000000000
-      Size.Width = 580.000000000000000000
+      Margins.Left = 80.000000000000000000
+      Size.Width = 560.000000000000000000
       Size.Height = 480.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
       object Layout2: TLayout
         Align = Top
-        Size.Width = 580.000000000000000000
+        Size.Width = 560.000000000000000000
         Size.Height = 60.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
@@ -44,7 +44,7 @@ object PageLayout: TPageLayout
       end
       object lytBody: TLayout
         Align = Client
-        Size.Width = 580.000000000000000000
+        Size.Width = 560.000000000000000000
         Size.Height = 420.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1

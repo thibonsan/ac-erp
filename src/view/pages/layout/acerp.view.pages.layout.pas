@@ -29,13 +29,17 @@ implementation
 
 {$R *.fmx}
 
-uses acerp.view.components.sidebar;
+uses
+  Router4D,
+  acerp.view.components.sidebar,
+  acerp.view.pages.home;
 
 { TPageLayout }
 
 function TPageLayout.Render: TFMXObject;
 begin
   RenderSidebar;
+  TRouter4D.Render<TPageHome>.SetElement(lytBody, lytBody);
   Result := lytContainer;
 end;
 
