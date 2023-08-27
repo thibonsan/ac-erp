@@ -3,22 +3,33 @@ unit acerp.view.pages.home;
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
-  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Layouts,
+  System.SysUtils,
+  System.Types,
+  System.UITypes,
+  System.Classes,
+  System.Variants,
+  FMX.Types,
+  FMX.Controls,
+  FMX.Forms,
+  FMX.Graphics,
+  FMX.Dialogs,
+  FMX.Layouts,
   Router4D.Interfaces;
 
 type
-  TPageHome = class(TForm, IRouter4DComponent)
+  TPageHome = class(TForm, iRouter4DComponent)
     lytContainer: TLayout;
     lytCards: TLayout;
-    Layout2: TLayout;
+    lytGraficos: TLayout;
     lytCardLeft: TLayout;
-    lytCardRigth: TLayout;
+    lytCardRight: TLayout;
     procedure lytCardsResize(Sender: TObject);
     procedure lytCardLeftResize(Sender: TObject);
-    procedure lytCardRigthResize(Sender: TObject);
+    procedure lytCardRightResize(Sender: TObject);
   private
     procedure CarregaCards;
+    procedure CarregaGraficos;
+
     procedure ResponsiveLayout(Value: TLayout; Count: Integer);
   public
     function Render: TFMXObject;
@@ -29,16 +40,16 @@ implementation
 
 {$R *.fmx}
 
-uses acerp.view.components.cards;
+uses acerp.view.components.cards, acerp.view.components.cardsgraficos,
+  acerp.services.enums;
 
 { TPageHome }
 
 procedure TPageHome.CarregaCards;
 begin
-
-  lytCardRigth.AddObject(
+  lytCardRight.AddObject(
     TComponentCard.New(Self)
-      .Nome('errors')
+      .Nome('Errors')
       .Titulo('Errors')
       .SubTitulo('23')
       .ImagemTitulo('globo')
@@ -47,9 +58,9 @@ begin
       .Alinhamento(TAlignLayout.Left)
     .Build);
 
-  lytCardRigth.AddObject(
+  lytCardRight.AddObject(
     TComponentCard.New(Self)
-      .Nome('followers')
+      .Nome('Followers')
       .Titulo('Followers')
       .SubTitulo('+45K')
       .ImagemTitulo('globo')
@@ -71,7 +82,7 @@ begin
 
   lytCardLeft.AddObject(
     TComponentCard.New(Self)
-      .Nome('revenue')
+      .Nome('Revenue')
       .Titulo('Revenue')
       .SubTitulo('$ 1,345')
       .ImagemTitulo('globo')
@@ -81,14 +92,29 @@ begin
     .Build);
 end;
 
-procedure TPageHome.lytCardLeftResize(Sender: TObject);
+procedure TPageHome.CarregaGraficos;
 begin
-  ResponsiveLayout(lytCardLeft, 2);
+  lytGraficos.AddObject(
+    TComponentCardGraficos.New(Self)
+      .Nome('financial')
+      .TituloInfo('+18')
+      .TituloDescricao('$34,657')
+      .TituloGrafico('TOTAL EARNINGS IN LAST TEN QUARTERS')
+      .DescricaoRodape('Financial Statistics')
+      .ImagemRodape('mais')
+      .Alinhamento(TAlignLayout.Left)
+      .TipoGrafico(TChartType.Lines)
+      .Build);
 end;
 
-procedure TPageHome.lytCardRigthResize(Sender: TObject);
+procedure TPageHome.lytCardLeftResize(Sender: TObject);
 begin
-  ResponsiveLayout(lytCardRigth, 2);
+  ResponsiveLayout(lytCardLeft,2);
+end;
+
+procedure TPageHome.lytCardRightResize(Sender: TObject);
+begin
+  ResponsiveLayout(lytCardRight,2);
 end;
 
 procedure TPageHome.lytCardsResize(Sender: TObject);
@@ -99,6 +125,7 @@ end;
 function TPageHome.Render: TFMXObject;
 begin
   CarregaCards;
+  CarregaGraficos;
   Result := lytContainer;
 end;
 

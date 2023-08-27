@@ -9,6 +9,14 @@
 			"artifacts": {},
 			"failed": false,
 			"changed": false
+		},
+		"https://github.com/alepmedeiros/chart4delphi": {
+			"name": "chart4delphi",
+			"version": "v1.0.0",
+			"hash": "e406875dddafe435fede2d288f2757d6",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
 		}
 	}
 }
