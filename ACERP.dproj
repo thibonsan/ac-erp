@@ -71,7 +71,7 @@
         <SanitizedProjectName>ACERP</SanitizedProjectName>
         <VerInfo_Locale>1046</VerInfo_Locale>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <DCC_UnitSearchPath>$(DCC_UnitSearchPath);modules\.dcp;modules\.dcu;modules;modules\chart4delphi\sample\char4delphi-sample;modules\chart4delphi\src;modules\router4delphi\src</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>modules\.dcp;modules\.dcu;modules;modules\chart4delphi\sample\char4delphi-sample;modules\chart4delphi\src;modules\router4delphi\src;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_UsePackage>soapserver;IndySystem;vclwinx;fmx;vclie;DbxCommonDriver;bindengine;vcldb;IndyIPCommon;VCLRESTComponents;FireDACCommonODBC;FireDACCommonDriver;appanalytics;IndyProtocols;vclx;IndyIPClient;dbxcds;vcledge;vclFireDAC;bindcompvclwinx;bindcomp;FireDACCommon;IndyCore;RESTBackendComponents;bindcompfmx;bindcompdbx;inetdb;rtl;FireDACMySQLDriver;FireDACSqliteDriver;DbxClientDriver;FireDACADSDriver;RESTComponents;soapmidas;DBXSqliteDriver;vcl;vclactnband;IndyIPServer;dsnapxml;fmxFireDAC;dbexpress;dsnapcon;adortl;DBXMySQLDriver;VclSmp;inet;vclimg;vcltouch;FireDACPgDriver;FireDAC;fmxase;inetdbxpress;xmlrtl;tethering;dbrtl;bindcompvcl;dsnap;fmxdae;CloudService;FireDACMSAccDriver;CustomIPTransport;fmxobj;bindcompvclsmp;soaprtl;vcldsnap;DBXInterBaseDriver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
@@ -167,6 +167,16 @@
         <DCCReference Include="src\services\acerp.services.charts.pas"/>
         <DCCReference Include="src\services\acerp.services.chats.interfaces.pas"/>
         <DCCReference Include="src\services\acerp.services.enums.pas"/>
+        <DCCReference Include="src\view\pages\pessoas\acerp.view.pages.pessoas.pas">
+            <Form>PagePessoas</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="src\view\components\edits\acerp.view.components.edits.pas">
+            <Form>ComponentEdit</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="src\view\components\acerp.view.components.interfaces.pas"/>
         <RcItem Include="src\asserts\seta-triangular-apontando-para-baixo.png">
             <ResourceType>RCDATA</ResourceType>
             <ResourceId>setabaixo</ResourceId>

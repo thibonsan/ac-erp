@@ -26,9 +26,10 @@ type
   private
     FHeight: Single;
     FComposite: Boolean;
+    FProc: TProc<TObject>;
 
     constructor Create(AOwner: TComponent); override;
-    procedure ChamaSubMenu;
+    procedure ChamaSubMenu(Sender: TObject);
     procedure StyleMenu;
   public
     class function New(AOwner: TComponent): TComponentButton;
@@ -41,6 +42,7 @@ type
     function Alinhamento(Value: TAlignLayout): TComponentButton;
     function Imagem(Value: string): TComponentButton;
     function SubMenu(Value: TObjectList<TFMXObject>): TComponentButton;
+    function Click(Value: TProc<TObject>): TComponentButton;
     function Component: TFMXObject;
   end;
 
@@ -60,11 +62,18 @@ begin
   lytContainer.Align := Value;
 end;
 
-procedure TComponentButton.ChamaSubMenu;
+procedure TComponentButton.ChamaSubMenu(Sender: TObject);
 begin
 
   if not FComposite then
+  begin
     Layout1.Padding.Right := 0;
+
+    if Assigned(FProc) then
+      FProc(Sender);
+
+    Exit;
+  end;
 
   lytSubMenu.Visible := not lytSubMenu.Visible;
 
@@ -79,6 +88,12 @@ begin
     TInterpolationType.Linear);
 
   ImageMenu.AnimateFloat('RotationAngle', 180, 0.2, TAnimationType.&In, TInterpolationType.Linear);
+end;
+
+function TComponentButton.Click(Value: TProc<TObject>): TComponentButton;
+begin
+  Result := Self;
+  FProc := Value;
 end;
 
 function TComponentButton.ColorDefault(Value: TAlphaColor): TComponentButton;
@@ -121,7 +136,7 @@ end;
 
 procedure TComponentButton.lytButtonClick(Sender: TObject);
 begin
-  ChamaSubMenu;
+  ChamaSubMenu(Sender);
 end;
 
 procedure TComponentButton.lytButtonResized(Sender: TObject);

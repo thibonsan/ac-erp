@@ -31,6 +31,7 @@ implementation
 {$R *.fmx}
 
 uses
+  Router4D,
   System.Generics.Collections,
   acerp.view.components.button;
 
@@ -54,6 +55,10 @@ begin
       .Descricao('Pessoas')
       .Imagem('pessoas')
       .ColorDefault($FFFFFFFF)
+      .Click(procedure (Sender: TObject)
+      begin
+        TRouter4D.Link.&To('Pessoas');
+      end)
       .Component);
 
   lytMenu.AddObject(
@@ -64,6 +69,10 @@ begin
       .Imagem('banco')
       .ColorDefault($FFFFFFFF)
       .Alinhamento(TAlignLayout.Top)
+      .Click(procedure (Sender: TObject)
+      begin
+        TRouter4D.Link.&To('Home');
+      end)
       .Component);
 
   lytMenu.AddObject(

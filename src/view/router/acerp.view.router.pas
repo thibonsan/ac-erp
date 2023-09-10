@@ -18,7 +18,7 @@ var
 implementation
 
 uses
-  Router4D, acerp.view.pages.home, acerp.view.pages.layout;
+  Router4D, acerp.view.pages.home, acerp.view.pages.layout, acerp.view.pages.pessoas;
 
 { TRouter }
 
@@ -27,7 +27,8 @@ begin
   TRouter4D
     .Switch
     .Router('Layout', TPageLayout)
-    .Router('Home', TPageHome);
+    .Router('Home', TPageHome)
+    .Router('Pessoas', TPagePessoas);
 end;
 
 destructor TRouter.Destroy;

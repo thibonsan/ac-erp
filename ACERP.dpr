@@ -16,7 +16,10 @@ uses
   acerp.view.components.cardsgraficos in 'src\view\components\cardsgraficos\acerp.view.components.cardsgraficos.pas' {ComponentCardGraficos: TFrame},
   acerp.services.charts in 'src\services\acerp.services.charts.pas',
   acerp.services.chats.interfaces in 'src\services\acerp.services.chats.interfaces.pas',
-  acerp.services.enums in 'src\services\acerp.services.enums.pas';
+  acerp.services.enums in 'src\services\acerp.services.enums.pas',
+  acerp.view.pages.pessoas in 'src\view\pages\pessoas\acerp.view.pages.pessoas.pas' {PagePessoas},
+  acerp.view.components.edits in 'src\view\components\edits\acerp.view.components.edits.pas' {ComponentEdit: TFrame},
+  acerp.view.components.interfaces in 'src\view\components\acerp.view.components.interfaces.pas';
 
 {$R *.res}
 

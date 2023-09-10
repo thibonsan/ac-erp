@@ -1,0 +1,49 @@
+object ComponentEdit: TComponentEdit
+  Size.Width = 320.000000000000000000
+  Size.Height = 60.000000000000000000
+  Size.PlatformDefault = False
+  object lytContainer: TLayout
+    Align = Client
+    Size.Width = 320.000000000000000000
+    Size.Height = 60.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object lblTitulo: TLabel
+      Align = Top
+      StyledSettings = [Family, Style]
+      Margins.Bottom = 5.000000000000000000
+      Size.Width = 320.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 13.000000000000000000
+      Text = 'lblTitulo'
+      TabOrder = 0
+    end
+    object Rectangle1: TRectangle
+      Align = Client
+      Fill.Color = claNull
+      Padding.Left = 10.000000000000000000
+      Padding.Top = 10.000000000000000000
+      Padding.Right = 10.000000000000000000
+      Padding.Bottom = 10.000000000000000000
+      Size.Width = 320.000000000000000000
+      Size.Height = 38.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Color = xFFE3E3E3
+      XRadius = 5.000000000000000000
+      YRadius = 5.000000000000000000
+      object edtText: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Client
+        StyleLookup = 'transparentedit'
+        TabOrder = 0
+        TextSettings.Font.Size = 15.000000000000000000
+        Size.Width = 300.000000000000000000
+        Size.Height = 18.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Style, FontColor]
+        OnChange = edtTextChange
+      end
+    end
+  end
+end
