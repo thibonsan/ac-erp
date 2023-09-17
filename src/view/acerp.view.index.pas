@@ -23,13 +23,13 @@ implementation
 
 uses
   Router4D,
-  acerp.view.pages.layout;
+  acerp.view.pages.login;
 
 {$R *.fmx}
 
 procedure TPageIndex.FormCreate(Sender: TObject);
 begin
-  TRouter4D.Render<TPageLayout>.SetElement(lytContainer, lytContainer);
+  TRouter4D.Render<TPageLogin>.SetElement(lytContainer, lytContainer);
 end;
 
 end.

@@ -33,6 +33,9 @@ type
     function Titulo(Value: string): iEdits;
     function FontColorTitulo(Value: TAlphaColor = $FFE3E3E3): iEdits;
     function PlaceHolder(Value: string): iEdits;
+    function Image(Value: string): iEdits;
+    function ImageColor(Value: TAlphaColor): iEdits;
+    function Password(Value: Boolean): iEdits;
     function Build: TFMXObject;
   end;
 
@@ -97,6 +100,16 @@ begin
   edtText.TextSettings.HorzAlign := Value;
 end;
 
+function TComponentEdit.Image(Value: string): iEdits;
+begin
+  Result :=Self;
+end;
+
+function TComponentEdit.ImageColor(Value: TAlphaColor): iEdits;
+begin
+  Result :=Self;
+end;
+
 function TComponentEdit.Largura(Value: Integer): iEdits;
 begin
   Result := Self;
@@ -121,6 +134,11 @@ function TComponentEdit.Nome(Value: string): iEdits;
 begin
   Result := Self;
   Self.Name := Value;
+end;
+
+function TComponentEdit.Password(Value: Boolean): iEdits;
+begin
+  Result :=Self;
 end;
 
 function TComponentEdit.PlaceHolder(Value: string): iEdits;

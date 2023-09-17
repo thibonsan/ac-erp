@@ -31,6 +31,9 @@ type
     function Titulo(Value: string): iEdits;
     function FontColorTitulo(Value: TAlphaColor = $FFE3E3E3): iEdits;
     function PlaceHolder(Value: string): iEdits;
+    function Image(Value: string): iEdits;
+    function ImageColor(Value: TAlphaColor): iEdits;
+    function Password(Value: Boolean): iEdits;
     function Build: TFMXObject;
   end;
 

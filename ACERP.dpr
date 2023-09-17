@@ -19,7 +19,9 @@ uses
   acerp.services.enums in 'src\services\acerp.services.enums.pas',
   acerp.view.pages.pessoas in 'src\view\pages\pessoas\acerp.view.pages.pessoas.pas' {PagePessoas},
   acerp.view.components.edits in 'src\view\components\edits\acerp.view.components.edits.pas' {ComponentEdit: TFrame},
-  acerp.view.components.interfaces in 'src\view\components\acerp.view.components.interfaces.pas';
+  acerp.view.components.interfaces in 'src\view\components\acerp.view.components.interfaces.pas',
+  acerp.view.pages.login in 'src\view\pages\login\acerp.view.pages.login.pas' {PageLogin},
+  acerp.view.components.editImage in 'src\view\components\editImagem\acerp.view.components.editImage.pas' {ComponentEditImage: TFrame};
 
 {$R *.res}
 

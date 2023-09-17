@@ -39,7 +39,7 @@ uses
 function TPageLayout.Render: TFMXObject;
 begin
   RenderSidebar;
-  TRouter4D.Render<TPageHome>.SetElement(lytBody, lytBody);
+  TRouter4D.Render<TPageHome>.SetElement(lytBody);
   Result := lytContainer;
 end;
 
