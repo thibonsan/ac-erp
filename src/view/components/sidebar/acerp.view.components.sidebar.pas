@@ -85,6 +85,20 @@ begin
       .ColorDefault($FFFFFFFF)
       .Alinhamento(TAlignLayout.Top)
       .Component);
+
+  lytMenu.AddObject(
+    TComponentButton.New(Self)
+      .Nome('tabela')
+      .SingleButton
+      .Descricao('Tabela')
+      .Imagem('tabela')
+      .ColorDefault($FFFFFFFF)
+      .Alinhamento(TAlignLayout.Top)
+      .Click(procedure (Sender: TObject)
+      begin
+        TRouter4D.Link.&To('Tables');
+      end)
+      .Component);
 end;
 
 procedure TComponentSidebar.ConstruirPerfil;

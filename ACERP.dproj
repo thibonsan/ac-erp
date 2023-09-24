@@ -186,6 +186,20 @@
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
+        <DCCReference Include="src\view\pages\tables\acerp.view.pages.tables.pas">
+            <Form>PageTables</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="src\view\components\tables\acerp.view.components.extendedtables.pas">
+            <Form>ComponentExtendedTable</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="src\view\components\ListaTbles\acerp.view.components.listatables.pas">
+            <Form>ComponentListaTable</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
         <RcItem Include="src\asserts\seta-triangular-apontando-para-baixo.png">
             <ResourceType>RCDATA</ResourceType>
             <ResourceId>setabaixo</ResourceId>
@@ -229,6 +243,18 @@
         <RcItem Include="src\asserts\perfil-de-usuario.png">
             <ResourceType>RCDATA</ResourceType>
             <ResourceId>user</ResourceId>
+        </RcItem>
+        <RcItem Include="src\asserts\cancelar.png">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>cancelar</ResourceId>
+        </RcItem>
+        <RcItem Include="src\asserts\editar.png">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>editar</ResourceId>
+        </RcItem>
+        <RcItem Include="src\asserts\tabela.png">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>tabela</ResourceId>
         </RcItem>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
@@ -295,6 +321,18 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="src\asserts\cancelar.png" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="src\asserts\editar.png" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="src\asserts\globo.png" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
@@ -338,6 +376,12 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="src\asserts\seta-triangular-apontando-para-baixo.png" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="src\asserts\tabela.png" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>

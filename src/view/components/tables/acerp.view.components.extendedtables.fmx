@@ -1,0 +1,156 @@
+object ComponentExtendedTable: TComponentExtendedTable
+  Size.Width = 932.000000000000000000
+  Size.Height = 513.000000000000000000
+  Size.PlatformDefault = False
+  object lytContainer: TLayout
+    Align = Client
+    Padding.Left = 10.000000000000000000
+    Padding.Top = 10.000000000000000000
+    Padding.Right = 10.000000000000000000
+    Padding.Bottom = 10.000000000000000000
+    Size.Width = 932.000000000000000000
+    Size.Height = 513.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object RectangleBackground: TRectangle
+      Align = Client
+      Fill.Color = claWhite
+      Padding.Left = 10.000000000000000000
+      Padding.Top = 10.000000000000000000
+      Padding.Right = 10.000000000000000000
+      Padding.Bottom = 10.000000000000000000
+      Size.Width = 912.000000000000000000
+      Size.Height = 493.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 10.000000000000000000
+      YRadius = 10.000000000000000000
+      object ShadowEffect1: TShadowEffect
+        Distance = 2.000000000000000000
+        Direction = 45.000000000000000000
+        Softness = 0.200000002980232200
+        Opacity = 0.600000023841857900
+        ShadowColor = claBlack
+      end
+      object Layout1: TLayout
+        Align = Top
+        Position.X = 10.000000000000000000
+        Position.Y = 10.000000000000000000
+        Size.Width = 892.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object Label1: TLabel
+          Align = Client
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 892.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 25.000000000000000000
+          Text = 'Simple Table'
+          TabOrder = 0
+        end
+      end
+      object LayoutTable: TLayout
+        Align = Client
+        Padding.Left = 10.000000000000000000
+        Padding.Right = 10.000000000000000000
+        Size.Width = 892.000000000000000000
+        Size.Height = 423.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object LayoutTitulosTable: TLayout
+          Align = Top
+          Position.X = 10.000000000000000000
+          Size.Width = 872.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object Label2: TLabel
+            Align = Left
+            StyledSettings = [Family, Style]
+            Margins.Left = 10.000000000000000000
+            Position.X = 10.000000000000000000
+            Size.Width = 70.000000000000000000
+            Size.Height = 50.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 15.000000000000000000
+            Text = '#'
+            TabOrder = 5
+          end
+          object Label3: TLabel
+            Align = Right
+            StyledSettings = [Family, Style]
+            Margins.Left = 10.000000000000000000
+            Position.X = 622.000000000000000000
+            Size.Width = 120.000000000000000000
+            Size.Height = 50.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 15.000000000000000000
+            TextSettings.HorzAlign = Center
+            Text = 'Sal'#225'rio'
+            TabOrder = 4
+          end
+          object Label4: TLabel
+            Align = Right
+            StyledSettings = [Family, Style]
+            Margins.Left = 10.000000000000000000
+            Position.X = 532.000000000000000000
+            Size.Width = 80.000000000000000000
+            Size.Height = 50.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 15.000000000000000000
+            TextSettings.HorzAlign = Center
+            Text = 'Desde'
+            TabOrder = 2
+          end
+          object Label5: TLabel
+            Align = Right
+            StyledSettings = [Family, Style]
+            Margins.Left = 10.000000000000000000
+            Position.X = 342.000000000000000000
+            Size.Width = 180.000000000000000000
+            Size.Height = 50.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 15.000000000000000000
+            Text = 'Cargo'
+            TabOrder = 1
+          end
+          object Label6: TLabel
+            Align = Client
+            StyledSettings = [Family, Style]
+            Margins.Left = 10.000000000000000000
+            Size.Width = 242.000000000000000000
+            Size.Height = 50.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 15.000000000000000000
+            Text = 'Nome'
+            TabOrder = 0
+          end
+          object Label7: TLabel
+            Align = Right
+            StyledSettings = [Family, Style]
+            Margins.Left = 10.000000000000000000
+            Position.X = 752.000000000000000000
+            Size.Width = 120.000000000000000000
+            Size.Height = 50.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 15.000000000000000000
+            TextSettings.HorzAlign = Center
+            Text = 'A'#231#227'o'
+            TabOrder = 3
+          end
+        end
+        object VertScrollBox1: TVertScrollBox
+          Align = Client
+          Size.Width = 872.000000000000000000
+          Size.Height = 373.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Viewport.Width = 872.000000000000000000
+          Viewport.Height = 373.000000000000000000
+        end
+      end
+    end
+  end
+end

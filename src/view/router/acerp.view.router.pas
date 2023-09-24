@@ -19,7 +19,7 @@ implementation
 
 uses
   Router4D, acerp.view.pages.home, acerp.view.pages.layout, acerp.view.pages.pessoas,
-  acerp.view.pages.login;
+  acerp.view.pages.login, acerp.view.pages.tables;
 
 { TRouter }
 
@@ -27,10 +27,11 @@ constructor TRouter.Create;
 begin
   TRouter4D
     .Switch
-    .Router('Layout', TPageLayout)
-    .Router('Home', TPageHome)
-    .Router('Pessoas', TPagePessoas)
-    .Router('Login', TPageLogin);
+      .Router('Layout', TPageLayout)
+      .Router('Home', TPageHome)
+      .Router('Pessoas', TPagePessoas)
+      .Router('Login', TPageLogin)
+      .Router('Tables', TPageTables);
 end;
 
 destructor TRouter.Destroy;

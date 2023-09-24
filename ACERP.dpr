@@ -21,7 +21,10 @@ uses
   acerp.view.components.edits in 'src\view\components\edits\acerp.view.components.edits.pas' {ComponentEdit: TFrame},
   acerp.view.components.interfaces in 'src\view\components\acerp.view.components.interfaces.pas',
   acerp.view.pages.login in 'src\view\pages\login\acerp.view.pages.login.pas' {PageLogin},
-  acerp.view.components.editImage in 'src\view\components\editImagem\acerp.view.components.editImage.pas' {ComponentEditImage: TFrame};
+  acerp.view.components.editImage in 'src\view\components\editImagem\acerp.view.components.editImage.pas' {ComponentEditImage: TFrame},
+  acerp.view.pages.tables in 'src\view\pages\tables\acerp.view.pages.tables.pas' {PageTables},
+  acerp.view.components.extendedtables in 'src\view\components\tables\acerp.view.components.extendedtables.pas' {ComponentExtendedTable: TFrame},
+  acerp.view.components.listatables in 'src\view\components\ListaTbles\acerp.view.components.listatables.pas' {ComponentListaTable: TFrame};
 
 {$R *.res}
 
