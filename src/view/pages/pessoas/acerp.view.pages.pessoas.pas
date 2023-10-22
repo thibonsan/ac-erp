@@ -18,7 +18,6 @@ type
     Layout4: TLayout;
     Label1: TLabel;
     Layout5: TLayout;
-    Layout6: TLayout;
     Layout7: TLayout;
     Layout8: TLayout;
     Layout9: TLayout;
@@ -45,106 +44,113 @@ begin
 
   Layout5.AddObject(
     TComponentEdit.New(Self)
-      .Nome('company')
-      .Enable(False)
-      .Titulo('Company (disable)')
+      .Nome('ativo')
+      .Titulo('Ativo')
       .Alinhamento(TAlignLayout.Left)
-      .Largura(300)
+      .Largura(100)
       .Margem(lMargem)
-      .PlaceHolder('Company')
+      .PlaceHolder('Ativo')
       .Build);
 
   Layout5.AddObject(
     TComponentEdit.New(Self)
-      .Nome('email')
-      .Titulo('Email address')
+      .Nome('nome')
+      .Titulo('Nome')
       .Alinhamento(TAlignLayout.Left)
-      .Largura(300)
+      .Largura(600)
       .Margem(lMargem)
-      .PlaceHolder('EMail')
-      .BackgroundColor($FFFFFFFF)
+      .PlaceHolder('Nome')
       .Build);
 
   Layout5.AddObject(
     TComponentEdit.New(Self)
-      .Nome('username')
-      .Titulo('Username')
+      .Nome('cpfcnpj')
+      .Titulo('CPF')
       .Alinhamento(TAlignLayout.Left)
-      .Largura(300)
+      .Largura(200)
       .Margem(lMargem)
-      .PlaceHolder('Username')
+      .PlaceHolder('CPF')
       .BackgroundColor($FFFFFFFF)
       .Build);
 
   Layout9.AddObject(
     TComponentEdit.New(Self)
-      .Nome('first')
-      .Titulo('First Name')
+      .Nome('telefone')
+      .Titulo('Telefone')
       .Alinhamento(TAlignLayout.Left)
-      .Largura(460)
+      .Largura(200)
       .Margem(lMargem)
-      .PlaceHolder('First Name')
+      .PlaceHolder('Telefone')
       .Build);
 
   Layout9.AddObject(
     TComponentEdit.New(Self)
-      .Nome('last')
-      .Titulo('Last Name')
+      .Nome('eMail')
+      .Titulo('E-Mail')
       .Alinhamento(TAlignLayout.Left)
-      .Largura(460)
+      .Largura(710)
       .Margem(lMargem)
-      .PlaceHolder('Last Name')
+      .PlaceHolder('E-Mail')
       .Build);
 
   Layout8.AddObject(
     TComponentEdit.New(Self)
-      .Nome('address')
-      .Titulo('Address')
+      .Nome('endereco')
+      .Titulo('Endereço')
       .Alinhamento(TAlignLayout.Left)
-      .Largura(920)
+      .Largura(600)
       .Margem(lMargem)
-      .PlaceHolder('Address')
+      .PlaceHolder('Endereço')
+      .Build);
+
+  Layout8.AddObject(
+    TComponentEdit.New(Self)
+      .Nome('complemento')
+      .Titulo('Complemento')
+      .Alinhamento(TAlignLayout.Left)
+      .Largura(180)
+      .Margem(lMargem)
+      .PlaceHolder('Complemento')
+      .Build);
+
+  Layout8.AddObject(
+    TComponentEdit.New(Self)
+      .Nome('numero')
+      .Titulo('Número')
+      .Alinhamento(TAlignLayout.Left)
+      .Largura(120)
+      .Margem(lMargem)
+      .PlaceHolder('Número')
       .Build);
 
   Layout7.AddObject(
     TComponentEdit.New(Self)
-      .Nome('city')
-      .Titulo('City')
+      .Nome('cep')
+      .Titulo('Cep')
       .Alinhamento(TAlignLayout.Left)
       .Largura(300)
       .Margem(lMargem)
-      .PlaceHolder('City')
+      .PlaceHolder('Cep')
       .Build);
 
   Layout7.AddObject(
     TComponentEdit.New(Self)
-      .Nome('country')
-      .Titulo('Country')
+      .Nome('estado')
+      .Titulo('Estado')
       .Alinhamento(TAlignLayout.Left)
-      .Largura(300)
+      .Largura(200)
       .Margem(lMargem)
-      .PlaceHolder('Country')
+      .PlaceHolder('Estado')
       .Build);
 
   Layout7.AddObject(
     TComponentEdit.New(Self)
-      .Nome('postal')
-      .Titulo('Postal Code')
+      .Nome('cidade')
+      .Titulo('Cidade')
       .Alinhamento(TAlignLayout.Left)
-      .Largura(300)
+      .Largura(400)
       .Margem(lMargem)
-      .PlaceHolder('Postal Code')
-      .Build);
-
-  Layout6.AddObject(
-    TComponentEdit.New(Self)
-      .Nome('about')
-      .Titulo('About Me')
-      .Alinhamento(TAlignLayout.Left)
-      .Largura(920)
-      .Margem(lMargem)
-      .VertText(TTextAlign.Leading)
-      .PlaceHolder('Tell me about you...')
+      .PlaceHolder('Cidade')
       .Build);
 end;
 

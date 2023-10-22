@@ -57,7 +57,7 @@ begin
       .ColorDefault($FFFFFFFF)
       .Click(procedure (Sender: TObject)
       begin
-        TRouter4D.Link.&To('Pessoas');
+        TRouter4D.Link.&To('ListaPessoas');
       end)
       .Component);
 

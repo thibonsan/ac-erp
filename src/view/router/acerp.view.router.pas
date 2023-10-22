@@ -19,7 +19,8 @@ implementation
 
 uses
   Router4D, acerp.view.pages.home, acerp.view.pages.layout, acerp.view.pages.pessoas,
-  acerp.view.pages.login, acerp.view.pages.tables;
+  acerp.view.pages.login, acerp.view.pages.tables,
+  acerp.view.pages.listapessoas;
 
 { TRouter }
 
@@ -29,6 +30,7 @@ begin
     .Switch
       .Router('Layout', TPageLayout)
       .Router('Home', TPageHome)
+      .Router('ListaPessoas', TPageListaPessoas)
       .Router('Pessoas', TPagePessoas)
       .Router('Login', TPageLogin)
       .Router('Tables', TPageTables);

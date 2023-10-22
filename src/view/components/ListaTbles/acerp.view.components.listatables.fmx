@@ -35,9 +35,9 @@ object ComponentListaTable: TComponentListaTable
     object LayoutAcoes: TLayout
       Align = Right
       Margins.Left = 10.000000000000000000
-      Position.X = 878.000000000000000000
+      Position.X = 913.000000000000000000
       Position.Y = 5.000000000000000000
-      Size.Width = 120.000000000000000000
+      Size.Width = 85.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 4
@@ -48,7 +48,7 @@ object ComponentListaTable: TComponentListaTable
         Padding.Top = 10.000000000000000000
         Padding.Right = 10.000000000000000000
         Padding.Bottom = 10.000000000000000000
-        Size.Width = 120.000000000000000000
+        Size.Width = 85.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 15.000000000000000000
@@ -61,6 +61,7 @@ object ComponentListaTable: TComponentListaTable
           Size.Width = 30.000000000000000000
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
+          Visible = False
           TabOrder = 5
           object RectangleNovo: TRectangle
             Align = Client
@@ -97,7 +98,7 @@ object ComponentListaTable: TComponentListaTable
         object LayoutExcluir: TLayout
           Align = Right
           Margins.Left = 5.000000000000000000
-          Position.X = 80.000000000000000000
+          Position.X = 45.000000000000000000
           Position.Y = 10.000000000000000000
           Size.Width = 30.000000000000000000
           Size.Height = 30.000000000000000000
@@ -178,7 +179,7 @@ object ComponentListaTable: TComponentListaTable
     object LayoutSalario: TLayout
       Align = Right
       Margins.Left = 10.000000000000000000
-      Position.X = 748.000000000000000000
+      Position.X = 783.000000000000000000
       Position.Y = 5.000000000000000000
       Size.Width = 120.000000000000000000
       Size.Height = 50.000000000000000000
@@ -199,7 +200,7 @@ object ComponentListaTable: TComponentListaTable
     object LayoutDesde: TLayout
       Align = Right
       Margins.Left = 10.000000000000000000
-      Position.X = 658.000000000000000000
+      Position.X = 693.000000000000000000
       Position.Y = 5.000000000000000000
       Size.Width = 80.000000000000000000
       Size.Height = 50.000000000000000000
@@ -220,7 +221,7 @@ object ComponentListaTable: TComponentListaTable
     object LayoutCargo: TLayout
       Align = Right
       Margins.Left = 10.000000000000000000
-      Position.X = 468.000000000000000000
+      Position.X = 503.000000000000000000
       Position.Y = 5.000000000000000000
       Size.Width = 180.000000000000000000
       Size.Height = 50.000000000000000000
@@ -240,14 +241,14 @@ object ComponentListaTable: TComponentListaTable
     object LayoutNome: TLayout
       Align = Client
       Margins.Left = 10.000000000000000000
-      Size.Width = 363.000000000000000000
+      Size.Width = 398.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
       object lblNome: TLabel
         Align = Client
         StyledSettings = [Family, Style, FontColor]
-        Size.Width = 363.000000000000000000
+        Size.Width = 398.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 15.000000000000000000

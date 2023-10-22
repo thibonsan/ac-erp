@@ -27,12 +27,6 @@ uses acerp.view.components.extendedtables;
 
 function TPageTables.Render: TFMXobject;
 begin
-
-  lytContainer.AddObject(
-    TComponentExtendedTable.New(Self)
-      .ColorTitulo($FFB6CFCE)
-      .Build);
-
   Result := lytContainer;
 end;
 

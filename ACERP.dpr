@@ -26,12 +26,14 @@ uses
   acerp.view.components.extendedtables in 'src\view\components\tables\acerp.view.components.extendedtables.pas' {ComponentExtendedTable: TFrame},
   acerp.view.components.listatables in 'src\view\components\ListaTbles\acerp.view.components.listatables.pas' {ComponentListaTable: TFrame},
   acerp.view.styles in 'src\view\styles\acerp.view.styles.pas',
-  acerp.view.styles.states in 'src\view\styles\acerp.view.styles.states.pas';
+  acerp.view.styles.states in 'src\view\styles\acerp.view.styles.states.pas',
+  acerp.view.pages.listapessoas in 'src\view\pages\pessoas\acerp.view.pages.listapessoas.pas' {PageListaPessoas};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.CreateForm(TPageIndex, PageIndex);
+  Application.CreateForm(TPageListaPessoas, PageListaPessoas);
   Application.Run;
 end.

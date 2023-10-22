@@ -3,17 +3,26 @@ unit acerp.view.components.extendedtables;
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
-  FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Layouts, FMX.Objects, FMX.Effects, FMX.Controls.Presentation;
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  System.Generics.Collections, FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms,
+  FMX.Dialogs, FMX.StdCtrls, FMX.Layouts, FMX.Objects, FMX.Effects, FMX.Controls.Presentation;
 
 type
+  TTransfer = record
+    Nome: string;
+    Item: string;
+    Descricao: string;
+    Cargo: string;
+    Desde: string;
+    Salario: Currency;
+  end;
+
   TComponentExtendedTable = class(TFrame)
     lytContainer: TLayout;
     RectangleBackground: TRectangle;
     ShadowEffect1: TShadowEffect;
     Layout1: TLayout;
-    Label1: TLabel;
+    lblTitulo: TLabel;
     LayoutTable: TLayout;
     LayoutTitulosTable: TLayout;
     VertScrollBox1: TVertScrollBox;
@@ -23,13 +32,24 @@ type
     Label5: TLabel;
     Label6: TLabel;
     Label7: TLabel;
+    Layout2: TLayout;
+    RoundRect1: TRoundRect;
+    Label1: TLabel;
+    Layout3: TLayout;
+    procedure Layout3MouseEnter(Sender: TObject);
+    procedure Layout3MouseLeave(Sender: TObject);
+    procedure Layout3Click(Sender: TObject);
   private
+    FProc: TProc<TObject>;
+
     procedure AlimentarLista;
   public
     class function New(AOwner: TComponent): TComponentExtendedTable;
     function Nome(AValue: string): TComponentExtendedTable;
+    function Titulo(AValue: string): TComponentExtendedTable;
     function ColorTitulo(AValue: TAlphaColor): TComponentExtendedTable;
-    function Build: TFMXObject;
+    function Click(AValue: TProc<TObject>): TComponentExtendedTable;
+    function Build(AValue: TList<TTransfer>): TFMXObject;
   end;
 
 implementation
@@ -55,20 +75,51 @@ begin
         .Build);
 end;
 
-function TComponentExtendedTable.Build: TFMXObject;
+function TComponentExtendedTable.Build(AValue: TList<TTransfer>): TFMXObject;
 begin
-  AlimentarLista;
+  for var I := 0 to Pred(AValue.Count) do
+    VertScrollBox1.AddObject(
+      TComponentListaTable.New(Self)
+        .Nome(AValue[I].Nome)
+        .Item(AValue[I].Item)
+        .Descricao(AValue[I].Descricao)
+        .Desde(AValue[I].Desde)
+        .Cargo(AValue[I].Cargo)
+        .Salario(AValue[I].Salario)
+        .Alinhamento(TAlignLayout.Top)
+      .Build);
+
   Result := lytContainer;
+end;
+
+function TComponentExtendedTable.Click(
+  AValue: TProc<TObject>): TComponentExtendedTable;
+begin
+  Result := Self;
+  FProc := AValue;
 end;
 
 function TComponentExtendedTable.ColorTitulo(
   AValue: TAlphaColor): TComponentExtendedTable;
 begin
   Result := Self;
+  lblTitulo.TextSettings.FontColor := AValue;
+end;
 
-  for var I := 0 to Pred(ComponentCount) do
-    if Components[I] is TLabel and (not TLabel(Components[I]).Text.Equals('Simple Example')) then
-      TLabel(Components[I]).TextSettings.FontColor := AValue;
+procedure TComponentExtendedTable.Layout3Click(Sender: TObject);
+begin
+  if Assigned(FProc) then
+    FProc(Sender);
+end;
+
+procedure TComponentExtendedTable.Layout3MouseEnter(Sender: TObject);
+begin
+  RoundRect1.Fill.Color := $FF29A0C2;
+end;
+
+procedure TComponentExtendedTable.Layout3MouseLeave(Sender: TObject);
+begin
+  RoundRect1.Fill.Color := $FF51BCDA;
 end;
 
 class function TComponentExtendedTable.New(
@@ -81,6 +132,13 @@ function TComponentExtendedTable.Nome(AValue: string): TComponentExtendedTable;
 begin
   Result := Self;
   Self.Name := AValue;
+end;
+
+function TComponentExtendedTable.Titulo(
+  AValue: string): TComponentExtendedTable;
+begin
+  Result := Self;
+  lblTitulo.Text := AValue;
 end;
 
 end.

@@ -40,15 +40,63 @@ object ComponentExtendedTable: TComponentExtendedTable
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
-        object Label1: TLabel
+        object lblTitulo: TLabel
           Align = Client
-          StyledSettings = [Family, Style, FontColor]
-          Size.Width = 892.000000000000000000
+          StyledSettings = [Family, Style]
+          Size.Width = 742.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 25.000000000000000000
           Text = 'Simple Table'
           TabOrder = 0
+        end
+        object Layout2: TLayout
+          Align = Right
+          Padding.Left = 10.000000000000000000
+          Padding.Top = 5.000000000000000000
+          Padding.Right = 10.000000000000000000
+          Padding.Bottom = 5.000000000000000000
+          Position.X = 742.000000000000000000
+          Size.Width = 150.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          object RoundRect1: TRoundRect
+            Align = Client
+            Fill.Color = xFF51BCDA
+            Padding.Left = 10.000000000000000000
+            Padding.Top = 10.000000000000000000
+            Padding.Right = 10.000000000000000000
+            Padding.Bottom = 10.000000000000000000
+            Size.Width = 130.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            Stroke.Kind = None
+            object Label1: TLabel
+              Align = Client
+              StyledSettings = [Family, Style]
+              Size.Width = 110.000000000000000000
+              Size.Height = 20.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.Font.Size = 15.000000000000000000
+              TextSettings.FontColor = claWhite
+              TextSettings.HorzAlign = Center
+              Text = 'Novo'
+              TabOrder = 0
+            end
+          end
+          object Layout3: TLayout
+            Align = Contents
+            Cursor = crHandPoint
+            HitTest = True
+            Size.Width = 150.000000000000000000
+            Size.Height = 50.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            OnClick = Layout3Click
+            OnMouseEnter = Layout3MouseEnter
+            OnMouseLeave = Layout3MouseLeave
+          end
         end
       end
       object LayoutTable: TLayout
