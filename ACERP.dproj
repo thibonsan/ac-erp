@@ -200,6 +200,8 @@
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
+        <DCCReference Include="src\view\styles\acerp.view.styles.pas"/>
+        <DCCReference Include="src\view\styles\acerp.view.styles.states.pas"/>
         <RcItem Include="src\asserts\seta-triangular-apontando-para-baixo.png">
             <ResourceType>RCDATA</ResourceType>
             <ResourceId>setabaixo</ResourceId>

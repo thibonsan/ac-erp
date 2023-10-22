@@ -58,7 +58,7 @@ implementation
 
 uses
   acerp.services.utils, acerp.view.components.editImage,
-  acerp.view.components.interfaces, Router4D;
+  acerp.view.components.interfaces, Router4D, acerp.view.styles;
 
 { TPageLogin }
 
@@ -89,12 +89,12 @@ begin
   Layout8.AddObject(
     TComponentEditImage.New(Self)
       .Nome('usuario')
-      .BackgroundColor($FFFFFFFF)
-      .FontColor($FF4B2D8B)
+      .BackgroundColor(BACKGROUND)
+      .FontColor(FONT_COLOR)
       .Alinhamento(TAlignLayout.Top)
       .Margem(lMargem)
       .Image('user')
-      .ImageColor($FFBEBCBA)
+      .ImageColor(IMAGE_COLOR) // $FFBEBCBA
       .PlaceHolder('Usuário')
       .Build);
 end;
@@ -102,11 +102,11 @@ end;
 function TPageLogin.Render: TFMXObject;
 begin
   TUtils.ResourceImage('user', ImageUser);
-  TUtils.ImageColor(ImageUser, $FFFFFFFF) ;
+  TUtils.ImageColor(ImageUser, WHITE);
   TUtils.ResourceImage('registrado', ImageRegistrado);
-  TUtils.ImageColor(ImageRegistrado, $FFFFFFFF) ;
+  TUtils.ImageColor(ImageRegistrado, WHITE) ;
   TUtils.ResourceImage('segredo', ImageBloquear);
-  TUtils.ImageColor(ImageBloquear, $FFFFFFFF) ;
+  TUtils.ImageColor(ImageBloquear, WHITE) ;
   MontarEdits;
   Result := lytContainer;
 end;

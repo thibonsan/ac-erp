@@ -24,7 +24,9 @@ uses
   acerp.view.components.editImage in 'src\view\components\editImagem\acerp.view.components.editImage.pas' {ComponentEditImage: TFrame},
   acerp.view.pages.tables in 'src\view\pages\tables\acerp.view.pages.tables.pas' {PageTables},
   acerp.view.components.extendedtables in 'src\view\components\tables\acerp.view.components.extendedtables.pas' {ComponentExtendedTable: TFrame},
-  acerp.view.components.listatables in 'src\view\components\ListaTbles\acerp.view.components.listatables.pas' {ComponentListaTable: TFrame};
+  acerp.view.components.listatables in 'src\view\components\ListaTbles\acerp.view.components.listatables.pas' {ComponentListaTable: TFrame},
+  acerp.view.styles in 'src\view\styles\acerp.view.styles.pas',
+  acerp.view.styles.states in 'src\view\styles\acerp.view.styles.states.pas';
 
 {$R *.res}
 

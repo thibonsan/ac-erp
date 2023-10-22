@@ -1,0 +1,38 @@
+unit acerp.view.styles;
+
+interface
+
+uses
+  System.UITypes;
+
+const
+  PRIMARY = $FF0D6EFD;
+  SECONDARY = $FF6C757D;
+  SUCCESS = $FF198754;
+  INFO = $FF1B1F22;
+  WARNING = $FF1B1F22;
+  DANGER = $FFDC3545;
+  LIGHT = $FF0DCAF0;
+  DARK = $FF212529;
+  WHITE = $FFFFFFFF;
+
+  FONT_SIZE_H1 = 24;
+  FONT_SIZE_H2 = 22;
+  FONT_SIZE_H3 = 20;
+  FONT_SIZE_H4 = 18;
+  FONT_SIZE_H5 = 16;
+  FONT_SIZE_H6 = 14;
+  FONT_SIZE_H7 = 12;
+  FONT_SIZE_H8 = 10;
+  FONT_SIZE_S = 8;
+
+var
+  BACKGROUND: TAlphaColor = WHITE;
+  FONT_COLOR: TAlphaColor = SECONDARY;
+  FONT_COLOR_CONTRAST: TAlphaColor = WHITE;
+
+  IMAGE_COLOR: TAlphaColor = SECONDARY;
+
+implementation
+
+end.
