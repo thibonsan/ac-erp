@@ -20,6 +20,8 @@ type
     Button1: TButton;
   private
     procedure RenderSidebar;
+    procedure MultiViewShow;
+    procedure MultiViewHide;
   public
     function Render: TFMXObject;
     procedure UnRender;
@@ -36,6 +38,16 @@ uses
 
 { TPageLayout }
 
+procedure TPageLayout.MultiViewHide;
+begin
+  MultiView1.HideMaster;
+end;
+
+procedure TPageLayout.MultiViewShow;
+begin
+  MultiView1.ShowMaster;
+end;
+
 function TPageLayout.Render: TFMXObject;
 begin
   RenderSidebar;
@@ -45,7 +57,13 @@ end;
 
 procedure TPageLayout.RenderSidebar;
 begin
-  Layout1.AddObject(TComponentSidebar.New(Self).Component);
+  Layout1.AddObject(
+    TComponentSidebar
+      .New(Self)
+      .MultiView(MultiView1)
+      .OnMenuShow(MultiViewShow)
+      .OnMenuHide(MultiViewHide)
+      .Component);
 end;
 
 procedure TPageLayout.UnRender;

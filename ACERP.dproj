@@ -262,6 +262,10 @@
             <ResourceType>RCDATA</ResourceType>
             <ResourceId>tabela</ResourceId>
         </RcItem>
+        <RcItem Include="src\asserts\home.png">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>home</ResourceId>
+        </RcItem>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -346,6 +350,12 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="src\asserts\grupo-de-usuarios.png" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="src\asserts\home.png" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>

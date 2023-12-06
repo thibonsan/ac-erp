@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Layouts, FMX.Objects;
+  FMX.Layouts, FMX.Objects, FMX.MultiView;
 
 type
   TComponentSidebar = class(TFrame)
@@ -19,10 +19,17 @@ type
     lytMenu: TLayout;
     Rectangle1: TRectangle;
   private
+    FMultiView: TMultiView;
+    FOnMenuShow: TProc;
+    FOnMenuHide: TProc;
+
     procedure ConstruirMenu;
     procedure ConstruirPerfil;
   public
     class function New(AOwner: TComponent): TComponentSidebar;
+    function MultiView(Value: TMultiView): TComponentSidebar;
+    function OnMenuShow(Value: TProc): TComponentSidebar;
+    function OnMenuHide(Value: TProc): TComponentSidebar;
     function Component:TFMXObject;
   end;
 
@@ -54,7 +61,8 @@ begin
       .SingleButton
       .Descricao('Pessoas')
       .Imagem('pessoas')
-      .ColorDefault($FFFFFFFF)
+      .ColorDefault($FFC1C0BF)
+      .ColorEnter($FFFFFFFF)
       .Click(procedure (Sender: TObject)
       begin
         TRouter4D.Link.&To('ListaPessoas');
@@ -67,7 +75,8 @@ begin
       .SingleButton
       .Descricao('Dashboard')
       .Imagem('banco')
-      .ColorDefault($FFFFFFFF)
+      .ColorDefault($FFC1C0BF)
+      .ColorEnter($FFFFFFFF)
       .Alinhamento(TAlignLayout.Top)
       .Click(procedure (Sender: TObject)
       begin
@@ -82,7 +91,8 @@ begin
       .SubMenu(lListaBotoes)
       .Descricao('Cadastros')
       .Imagem('cadastros')
-      .ColorDefault($FFFFFFFF)
+      .ColorDefault($FFC1C0BF)
+      .ColorEnter($FFFFFFFF)
       .Alinhamento(TAlignLayout.Top)
       .Component);
 
@@ -92,7 +102,8 @@ begin
       .SingleButton
       .Descricao('Tabela')
       .Imagem('tabela')
-      .ColorDefault($FFFFFFFF)
+      .ColorDefault($FFC1C0BF)
+      .ColorEnter($FFFFFFFF)
       .Alinhamento(TAlignLayout.Top)
       .Click(procedure (Sender: TObject)
       begin
@@ -104,18 +115,54 @@ end;
 procedure TComponentSidebar.ConstruirPerfil;
 begin
 
+  Layout2.AddObject(
+    TComponentButton.New(Self)
+      .Nome('home')
+      .SingleButton
+      .Descricao(EmptyStr)
+      .Imagem('home')
+      .ColorDefault($FFC1C0BF)
+      .ColorEnter($FFFFFFFF)
+      .Alinhamento(TAlignLayout.Client)
+      .Click(procedure (Sender: TObject)
+      begin
+
+        if Assigned(FOnMenuShow) then
+          FOnMenuShow;
+      end)
+      .Component);
+
   lytProfile.AddObject(
     TComponentButton.New(Self)
       .Nome('perfil')
       .Perfil('darth')
       .Descricao('Darth Vader')
-      .ColorDefault($FFFFFFFF)
+      .ColorDefault($FFC1C0BF)
+      .ColorEnter($FFFFFFFF)
       .Component);
+end;
+
+function TComponentSidebar.MultiView(Value: TMultiView): TComponentSidebar;
+begin
+  Result := Self;
+  FMultiView := Value;
 end;
 
 class function TComponentSidebar.New(AOwner: TComponent): TComponentSidebar;
 begin
   Result := Self.Create(AOwner);
+end;
+
+function TComponentSidebar.OnMenuHide(Value: TProc): TComponentSidebar;
+begin
+  Result := Self;
+  FOnMenuHide := Value;
+end;
+
+function TComponentSidebar.OnMenuShow(Value: TProc): TComponentSidebar;
+begin
+  Result := Self;
+  FOnMenuShow := Value;
 end;
 
 end.

@@ -37,10 +37,6 @@ object ComponentSidebar: TComponentSidebar
       TabOrder = 0
       object Layout2: TLayout
         Align = Top
-        Padding.Left = 20.000000000000000000
-        Padding.Top = 10.000000000000000000
-        Padding.Right = 20.000000000000000000
-        Padding.Bottom = 10.000000000000000000
         Size.Width = 250.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False

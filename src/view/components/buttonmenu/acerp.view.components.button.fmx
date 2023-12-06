@@ -107,6 +107,8 @@ object ComponentButton: TComponentButton
         TabOrder = 1
         OnResized = lytButtonResized
         OnClick = lytButtonClick
+        OnMouseEnter = lytButtonMouseEnter
+        OnMouseLeave = lytButtonMouseLeave
       end
     end
     object lytSubMenu: TLayout
