@@ -6,7 +6,7 @@ uses
   System.UITypes;
 
 const
-  PRIMARY = $FF0D6EFD;
+  PRIMARY = $FFC1C0BF;
   SECONDARY = $FF6C757D;
   SUCCESS = $FF198754;
   INFO = $FF1B1F22;
@@ -23,7 +23,8 @@ const
   FONT_SIZE_H5 = 16;
   FONT_SIZE_H6 = 14;
   FONT_SIZE_H7 = 12;
-  FONT_SIZE_H8 = 10;
+  FONT_SIZE_H8 = 13;
+  FONT_SIZE_H9 = 9;
   FONT_SIZE_S = 8;
 
 var

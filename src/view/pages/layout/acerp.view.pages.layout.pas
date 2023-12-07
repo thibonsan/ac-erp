@@ -60,7 +60,6 @@ begin
   Layout1.AddObject(
     TComponentSidebar
       .New(Self)
-      .MultiView(MultiView1)
       .OnMenuShow(MultiViewShow)
       .OnMenuHide(MultiViewHide)
       .Component);

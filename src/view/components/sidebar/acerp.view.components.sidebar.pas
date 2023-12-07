@@ -27,7 +27,6 @@ type
     procedure ConstruirPerfil;
   public
     class function New(AOwner: TComponent): TComponentSidebar;
-    function MultiView(Value: TMultiView): TComponentSidebar;
     function OnMenuShow(Value: TProc): TComponentSidebar;
     function OnMenuHide(Value: TProc): TComponentSidebar;
     function Component:TFMXObject;
@@ -40,7 +39,8 @@ implementation
 uses
   Router4D,
   System.Generics.Collections,
-  acerp.view.components.button;
+  acerp.view.components.button, acerp.view.styles,
+  acerp.view.components.buttonsubmenu, acerp.view.pages.menugenerico;
 
 { TComponentSidebar }
 
@@ -53,63 +53,116 @@ end;
 
 procedure TComponentSidebar.ConstruirMenu;
 begin
-  var lListaBotoes := TObjectList<TFmxObject>.Create;
-
-  lListaBotoes.Add(
-    TComponentButton.New(Self)
-      .Nome('pessoas')
-      .SingleButton
-      .Descricao('Pessoas')
-      .Imagem('pessoas')
-      .ColorDefault($FFC1C0BF)
-      .ColorEnter($FFFFFFFF)
-      .Click(procedure (Sender: TObject)
-      begin
-        TRouter4D.Link.&To('ListaPessoas');
-      end)
-      .Component);
 
   lytMenu.AddObject(
-    TComponentButton.New(Self)
-      .Nome('dashboard')
-      .SingleButton
-      .Descricao('Dashboard')
-      .Imagem('banco')
-      .ColorDefault($FFC1C0BF)
-      .ColorEnter($FFFFFFFF)
-      .Alinhamento(TAlignLayout.Top)
-      .Click(procedure (Sender: TObject)
-      begin
-        TRouter4D.Link.&To('Home');
-      end)
-      .Component);
+    TPageMenuGenerico.Create(Self)
+      .AddButton(
+        TComponentButtonSubMenu.Create(Self)
+          .Image('banco')
+          .Descricao('Dashboard')
+          .DefaultColor(PRIMARY)
+          .AccentColor(WHITE)
+          .Align(TAlignLayout.Top)
+          .Click(procedure (Sender: TObject)
+            begin
+              TRouter4D.Link.&To('Home');
+            end)
+          .Build)
+      .AddButton(
+        TComponentButtonSubMenu.Create(Self)
+          .Image('cadastros')
+          .Descricao('Cadastros')
+          .DefaultColor(PRIMARY)
+          .AccentColor(WHITE)
+          .Align(TAlignLayout.Top)
+          .AddSubMenu(
+            TComponentButtonSubMenu.Create(Self)
+              .Descricao('Pessoas')
+              .DescricaoMenu('P')
+              .DefaultColor(PRIMARY)
+              .AccentColor(WHITE)
+              .Align(TAlignLayout.Top)
+              .Click(procedure (Sender: TObject)
+              begin
 
-  lytMenu.AddObject(
-    TComponentButton.New(Self)
-      .Nome('cadastros')
-      .CompositeButton
-      .SubMenu(lListaBotoes)
-      .Descricao('Cadastros')
-      .Imagem('cadastros')
-      .ColorDefault($FFC1C0BF)
-      .ColorEnter($FFFFFFFF)
-      .Alinhamento(TAlignLayout.Top)
-      .Component);
+                if Assigned(FOnMenuHide) then
+                  FOnMenuHide;
 
-  lytMenu.AddObject(
-    TComponentButton.New(Self)
-      .Nome('tabela')
-      .SingleButton
-      .Descricao('Tabela')
-      .Imagem('tabela')
-      .ColorDefault($FFC1C0BF)
-      .ColorEnter($FFFFFFFF)
-      .Alinhamento(TAlignLayout.Top)
-      .Click(procedure (Sender: TObject)
-      begin
-        TRouter4D.Link.&To('Tables');
-      end)
-      .Component);
+                TRouter4D.Link.&To('ListaPessoas');
+              end)
+              .Build)
+        .Build)
+      .AddButton(
+        TComponentButtonSubMenu.Create(Self)
+          .Image('tabela')
+          .Descricao('Tabela')
+          .DefaultColor(PRIMARY)
+          .AccentColor(WHITE)
+          .Align(TAlignLayout.Top)
+          .Click(procedure (Sender: TObject)
+            begin
+              TRouter4D.Link.&To('Tables');
+            end)
+          .Build)
+      .Build);
+
+//  var lListaBotoes := TObjectList<TFmxObject>.Create;
+//
+//  lListaBotoes.Add(
+//    TComponentButton.New(Self)
+//      .Nome('pessoas')
+//      .SingleButton
+//      .Descricao('Pessoas')
+//      .Imagem('pessoas')
+//      .ColorDefault($FFC1C0BF)
+//      .ColorEnter($FFFFFFFF)
+//      .Click(procedure (Sender: TObject)
+//      begin
+//        TRouter4D.Link.&To('ListaPessoas');
+//      end)
+//      .Component);
+//
+//  lytMenu.AddObject(
+//    TComponentButton.New(Self)
+//      .Nome('dashboard')
+//      .SingleButton
+//      .Descricao('Dashboard')
+//      .Imagem('banco')
+//      .ColorDefault($FFC1C0BF)
+//      .ColorEnter($FFFFFFFF)
+//      .Alinhamento(TAlignLayout.Top)
+//      .Click(procedure (Sender: TObject)
+//      begin
+//        TRouter4D.Link.&To('Home');
+//      end)
+//      .Component);
+//
+//  lytMenu.AddObject(
+//    TComponentButton.New(Self)
+//      .Nome('cadastros')
+//      .CompositeButton
+//      .SubMenu(lListaBotoes)
+//      .Descricao('Cadastros')
+//      .Imagem('cadastros')
+//      .ColorDefault($FFC1C0BF)
+//      .ColorEnter($FFFFFFFF)
+//      .Alinhamento(TAlignLayout.Top)
+//      .Component);
+//
+//  lytMenu.AddObject(
+//    TComponentButton.New(Self)
+//      .Nome('tabela')
+//      .SingleButton
+//      .Descricao('Tabela')
+//      .Imagem('tabela')
+//      .ColorDefault($FFC1C0BF)
+//      .ColorEnter($FFFFFFFF)
+//      .Alinhamento(TAlignLayout.Top)
+//      .Click(procedure (Sender: TObject)
+//      begin
+//        TRouter4D.Link.&To('Tables');
+//      end)
+//      .Component);
 end;
 
 procedure TComponentSidebar.ConstruirPerfil;
@@ -140,12 +193,6 @@ begin
       .ColorDefault($FFC1C0BF)
       .ColorEnter($FFFFFFFF)
       .Component);
-end;
-
-function TComponentSidebar.MultiView(Value: TMultiView): TComponentSidebar;
-begin
-  Result := Self;
-  FMultiView := Value;
 end;
 
 class function TComponentSidebar.New(AOwner: TComponent): TComponentSidebar;

@@ -206,10 +206,14 @@
             <Form>PageListaPessoas</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <RcItem Include="src\asserts\seta-triangular-apontando-para-baixo.png">
-            <ResourceType>RCDATA</ResourceType>
-            <ResourceId>setabaixo</ResourceId>
-        </RcItem>
+        <DCCReference Include="src\view\components\buttonsubmenu\acerp.view.components.buttonsubmenu.pas">
+            <Form>ComponentButtonSubMenu</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="src\view\pages\menugenerico\acerp.view.pages.menugenerico.pas">
+            <Form>PageMenuGenerico</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
         <RcItem Include="src\asserts\banco.png">
             <ResourceType>RCDATA</ResourceType>
             <ResourceId>banco</ResourceId>
@@ -265,6 +269,14 @@
         <RcItem Include="src\asserts\home.png">
             <ResourceType>RCDATA</ResourceType>
             <ResourceId>home</ResourceId>
+        </RcItem>
+        <RcItem Include="src\asserts\seta-para-cima.png">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>setacima</ResourceId>
+        </RcItem>
+        <RcItem Include="src\asserts\seta-para-baixo.png">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>setabaixo</ResourceId>
         </RcItem>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
@@ -391,7 +403,13 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="src\asserts\seta-triangular-apontando-para-baixo.png" Configuration="Debug" Class="ProjectFile">
+                <DeployFile LocalName="src\asserts\seta-para-baixo.png" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="src\asserts\seta-para-cima.png" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
