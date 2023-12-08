@@ -58,51 +58,59 @@ begin
     TPageMenuGenerico.Create(Self)
       .AddButton(
         TComponentButtonSubMenu.Create(Self)
-          .Image('banco')
-          .Descricao('Dashboard')
-          .DefaultColor(PRIMARY)
-          .AccentColor(WHITE)
-          .Align(TAlignLayout.Top)
-          .Click(procedure (Sender: TObject)
-            begin
-              TRouter4D.Link.&To('Home');
-            end)
+          .Button
+            .Image('banco')
+            .Descricao('Dashboard')
+            .DefaultColor(PRIMARY)
+            .AccentColor(WHITE)
+            .Align(TAlignLayout.Top)
+            .Click(procedure (Sender: TObject)
+              begin
+                TRouter4D.Link.&To('Home');
+              end)
+          .&End
           .Build)
       .AddButton(
         TComponentButtonSubMenu.Create(Self)
-          .Image('cadastros')
-          .Descricao('Cadastros')
-          .DefaultColor(PRIMARY)
-          .AccentColor(WHITE)
-          .Align(TAlignLayout.Top)
+          .Button
+            .Image('cadastros')
+            .Descricao('Cadastros')
+            .DefaultColor(PRIMARY)
+            .AccentColor(WHITE)
+            .Align(TAlignLayout.Top)
+          .&End
           .AddSubMenu(
             TComponentButtonSubMenu.Create(Self)
-              .Descricao('Pessoas')
-              .DescricaoMenu('P')
-              .DefaultColor(PRIMARY)
-              .AccentColor(WHITE)
-              .Align(TAlignLayout.Top)
-              .Click(procedure (Sender: TObject)
-              begin
+              .Button
+                .Descricao('Pessoas')
+                .DescricaoMenu('P')
+                .DefaultColor(PRIMARY)
+                .AccentColor(WHITE)
+                .Align(TAlignLayout.Top)
+                .Click(procedure (Sender: TObject)
+                begin
 
-                if Assigned(FOnMenuHide) then
-                  FOnMenuHide;
+                  if Assigned(FOnMenuHide) then
+                    FOnMenuHide;
 
-                TRouter4D.Link.&To('ListaPessoas');
-              end)
+                  TRouter4D.Link.&To('ListaPessoas');
+                end)
+              .&End
               .Build)
         .Build)
       .AddButton(
         TComponentButtonSubMenu.Create(Self)
-          .Image('tabela')
-          .Descricao('Tabela')
-          .DefaultColor(PRIMARY)
-          .AccentColor(WHITE)
-          .Align(TAlignLayout.Top)
-          .Click(procedure (Sender: TObject)
-            begin
-              TRouter4D.Link.&To('Tables');
-            end)
+          .Button
+            .Image('tabela')
+            .Descricao('Tabela')
+            .DefaultColor(PRIMARY)
+            .AccentColor(WHITE)
+            .Align(TAlignLayout.Top)
+            .Click(procedure (Sender: TObject)
+              begin
+                TRouter4D.Link.&To('Tables');
+              end)
+          .&End
           .Build)
       .Build);
 

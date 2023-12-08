@@ -3,7 +3,8 @@ unit acerp.view.components.interfaces;
 interface
 
 uses
-  System.SysUtils, System.UITypes, FMX.Types;
+  System.SysUtils, System.UITypes, FMX.Types,
+  acerp.view.components.attributes.interfaces;
 
 type
 
@@ -35,6 +36,10 @@ type
     function ImageColor(Value: TAlphaColor): iEdits;
     function Password(Value: Boolean): iEdits;
     function Build: TFMXObject;
+  end;
+
+  IComponents<T> = interface
+    function Button: IButton<T>;
   end;
 
 implementation

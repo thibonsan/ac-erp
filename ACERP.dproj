@@ -214,6 +214,8 @@
             <Form>PageMenuGenerico</Form>
             <FormType>fmx</FormType>
         </DCCReference>
+        <DCCReference Include="src\view\components\attributes\acerp.view.components.attributes.interfaces.pas"/>
+        <DCCReference Include="src\view\components\attributes\acerp.view.components.attributes.button.pas"/>
         <RcItem Include="src\asserts\banco.png">
             <ResourceType>RCDATA</ResourceType>
             <ResourceId>banco</ResourceId>

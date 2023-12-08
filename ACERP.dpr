@@ -29,7 +29,9 @@ uses
   acerp.view.styles.states in 'src\view\styles\acerp.view.styles.states.pas',
   acerp.view.pages.listapessoas in 'src\view\pages\pessoas\acerp.view.pages.listapessoas.pas' {PageListaPessoas},
   acerp.view.components.buttonsubmenu in 'src\view\components\buttonsubmenu\acerp.view.components.buttonsubmenu.pas' {ComponentButtonSubMenu},
-  acerp.view.pages.menugenerico in 'src\view\pages\menugenerico\acerp.view.pages.menugenerico.pas' {PageMenuGenerico};
+  acerp.view.pages.menugenerico in 'src\view\pages\menugenerico\acerp.view.pages.menugenerico.pas' {PageMenuGenerico},
+  acerp.view.components.attributes.interfaces in 'src\view\components\attributes\acerp.view.components.attributes.interfaces.pas',
+  acerp.view.components.attributes.button in 'src\view\components\attributes\acerp.view.components.attributes.button.pas';
 
 {$R *.res}
 
