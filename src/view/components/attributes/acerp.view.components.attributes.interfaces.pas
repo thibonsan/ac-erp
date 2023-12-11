@@ -7,6 +7,7 @@ uses
 
 type
   IButton<T> = interface
+    function Parent(Value: T): IButton<T>;
     function Descricao(Value: string): IButton<T>; overload;
     function Descricao: string; overload;
     function Image(Value: string): IButton<T>; overload;

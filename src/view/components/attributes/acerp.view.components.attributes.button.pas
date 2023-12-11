@@ -24,6 +24,7 @@ type
     constructor Create(Parent: T);
   public
     class function New(Parent: T): IButton<T>;
+    function Parent(Value: T): IButton<T>;
     function Descricao(Value: string): IButton<T>; overload;
     function Descricao: string; overload;
     function Image(Value: string): IButton<T>; overload;
@@ -155,6 +156,12 @@ end;
 class function TButton<T>.New(Parent: T): IButton<T>;
 begin
   Result := Self.Create(Parent);
+end;
+
+function TButton<T>.Parent(Value: T): IButton<T>;
+begin
+  Result := Self;
+  FParent := Value;
 end;
 
 end.

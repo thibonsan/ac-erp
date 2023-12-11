@@ -143,11 +143,6 @@
             <Form>PageLayout</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="src\view\components\buttonmenu\acerp.view.components.button.pas">
-            <Form>ComponentButton</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
         <DCCReference Include="src\view\components\sidebar\acerp.view.components.sidebar.pas">
             <Form>ComponentSidebar</Form>
             <FormType>fmx</FormType>
@@ -206,16 +201,22 @@
             <Form>PageListaPessoas</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="src\view\components\buttonsubmenu\acerp.view.components.buttonsubmenu.pas">
-            <Form>ComponentButtonSubMenu</Form>
-            <FormType>fmx</FormType>
-        </DCCReference>
         <DCCReference Include="src\view\pages\menugenerico\acerp.view.pages.menugenerico.pas">
             <Form>PageMenuGenerico</Form>
             <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="src\view\components\attributes\acerp.view.components.attributes.interfaces.pas"/>
         <DCCReference Include="src\view\components\attributes\acerp.view.components.attributes.button.pas"/>
+        <DCCReference Include="src\view\components\buttons\buttonmenu\acerp.view.components.button.pas">
+            <Form>ComponentButton</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="src\view\components\buttons\buttonsubmenu\acerp.view.components.buttonsubmenu.pas">
+            <Form>ComponentButtonSubMenu</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="src\view\components\buttons\acerp.view.components.buttons.styles.pas"/>
         <RcItem Include="src\asserts\banco.png">
             <ResourceType>RCDATA</ResourceType>
             <ResourceId>banco</ResourceId>

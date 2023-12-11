@@ -10,9 +10,9 @@ type
   private
     FList: TDictionary<string, IInterface>;
 
+  public
     constructor Create;
     destructor Destroy; override;
-  public
     class function New: TStylesStates;
     function RegisterStyle(StyleName: string; StyleInterface: IInterface): TStylesStates;
     function GetStyle(StyleName: string): IInterface;

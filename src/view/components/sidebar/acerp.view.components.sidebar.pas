@@ -58,12 +58,10 @@ begin
     TPageMenuGenerico.Create(Self)
       .AddButton(
         TComponentButtonSubMenu.Create(Self)
+          .LoadStyles('ComponentButtonSubMenu')
           .Button
             .Image('banco')
             .Descricao('Dashboard')
-            .DefaultColor(PRIMARY)
-            .AccentColor(WHITE)
-            .Align(TAlignLayout.Top)
             .Click(procedure (Sender: TObject)
               begin
                 TRouter4D.Link.&To('Home');
@@ -72,21 +70,17 @@ begin
           .Build)
       .AddButton(
         TComponentButtonSubMenu.Create(Self)
+          .LoadStyles('ComponentButtonSubMenu')
           .Button
             .Image('cadastros')
             .Descricao('Cadastros')
-            .DefaultColor(PRIMARY)
-            .AccentColor(WHITE)
-            .Align(TAlignLayout.Top)
           .&End
           .AddSubMenu(
             TComponentButtonSubMenu.Create(Self)
+              .LoadStyles('ComponentButtonSubMenu')
               .Button
                 .Descricao('Pessoas')
                 .DescricaoMenu('P')
-                .DefaultColor(PRIMARY)
-                .AccentColor(WHITE)
-                .Align(TAlignLayout.Top)
                 .Click(procedure (Sender: TObject)
                 begin
 
@@ -100,12 +94,10 @@ begin
         .Build)
       .AddButton(
         TComponentButtonSubMenu.Create(Self)
+          .LoadStyles('ComponentButtonSubMenu')
           .Button
             .Image('tabela')
             .Descricao('Tabela')
-            .DefaultColor(PRIMARY)
-            .AccentColor(WHITE)
-            .Align(TAlignLayout.Top)
             .Click(procedure (Sender: TObject)
               begin
                 TRouter4D.Link.&To('Tables');

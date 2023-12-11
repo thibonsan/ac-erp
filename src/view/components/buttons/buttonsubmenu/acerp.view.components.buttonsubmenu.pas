@@ -7,7 +7,8 @@ uses
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Layouts,
   FMX.Controls.Presentation, FMX.StdCtrls, FMX.Objects,
   acerp.view.components.interfaces,
-  acerp.view.components.attributes.interfaces;
+  acerp.view.components.attributes.interfaces,
+  acerp.view.components.buttons.styles;
 
 type
   TComponentButtonSubMenu = class(TForm, IComponents<TComponentButtonSubMenu>)
@@ -32,6 +33,7 @@ type
     procedure lytButtonClick(Sender: TObject);
     procedure lytButtonMouseEnter(Sender: TObject);
     procedure lytButtonMouseLeave(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
   private
     FDescricao: string;
     FSubDescricao: string;
@@ -44,22 +46,15 @@ type
     FButtonHeight:Integer;
     FCountSubMenu: Integer;
     FButton: IButton<TComponentButtonSubMenu>;
+    FStyles: TCompponentButtonStyles;
 
     procedure AlterColor(Value: TAlphaColor);
     procedure AtualizarLayout;
   public
     function Build: TFMXObject;
     function AddSubMenu(Value: TFMXObject): TComponentButtonSubMenu;
+    function LoadStyles(Value: string): TComponentButtonSubMenu;
     function Button: IButton<TComponentButtonSubMenu>;
-
-//    function Descricao(Value: string): TComponentButtonSubMenu;
-//    function Image(Value: string): TComponentButtonSubMenu;
-//    function DescricaoMenu(Value: string): TComponentButtonSubMenu;
-//    function Click(Value: TProc<TObject>): TComponentButtonSubMenu;
-//    function DefaultColor(Value: TAlphaColor): TComponentButtonSubMenu;
-//    function AccentColor(Value: TAlphaColor): TComponentButtonSubMenu;
-//    function Align(Value: TAlignLayout): TComponentButtonSubMenu;
-//    function FontSize(Value: Integer): TComponentButtonSubMenu;
   end;
 
 implementation
@@ -70,14 +65,6 @@ uses acerp.services.utils, acerp.view.components.attributes.button;
 
 { TComponentButtonSubMenu }
 
-//function TComponentButtonSubMenu.AccentColor(
-//  Value: TAlphaColor): TComponentButtonSubMenu;
-//begin
-//  Result := Self;
-//  FAccentColor := Value;
-//  AlterColor(FAccentColor);
-//end;
-
 function TComponentButtonSubMenu.AddSubMenu(
   Value: TFMXObject): TComponentButtonSubMenu;
 begin
@@ -85,14 +72,6 @@ begin
   LayoutSubMenu.AddObject(Value);
   Inc(FCountSubMenu);
 end;
-
-//function TComponentButtonSubMenu.Align(
-//  Value: TAlignLayout): TComponentButtonSubMenu;
-//begin
-//  Result := Self;
-//  FAlign := Value;
-//  Layout1.Align := FAlign;
-//end;
 
 procedure TComponentButtonSubMenu.AlterColor(Value: TAlphaColor);
 begin
@@ -146,46 +125,6 @@ begin
   Result := FButton;
 end;
 
-//function TComponentButtonSubMenu.Click(
-//  Value: TProc<TObject>): TComponentButtonSubMenu;
-//begin
-//  Result := Self;
-//  FClick := Value;
-//end;
-//
-//function TComponentButtonSubMenu.DefaultColor(
-//  Value: TAlphaColor): TComponentButtonSubMenu;
-//begin
-//  Result := Self;
-//  FDefaultColor := Value;
-//  AlterColor(FDefaultColor);
-//end;
-//
-//function TComponentButtonSubMenu.Descricao(
-//  Value: string): TComponentButtonSubMenu;
-//begin
-//  Result := Self;
-//  FDescricao := Value;
-//  lblDescricao.Text := FDescricao;
-//end;
-//
-//function TComponentButtonSubMenu.DescricaoMenu(
-//  Value: string): TComponentButtonSubMenu;
-//begin
-//  Result := Self;
-//  lblInfodesc.Visible := True;
-//  lblInfodesc.Text := Value;
-//end;
-//
-//function TComponentButtonSubMenu.FontSize(
-//  Value: Integer): TComponentButtonSubMenu;
-//begin
-//  Result := Self;
-//  FFontSize := Value;
-//  lblDescricao.TextSettings.Font.Size := FFontSize;
-//  lblInfodesc.TextSettings.Font.Size := FFontSize;
-//end;
-
 procedure TComponentButtonSubMenu.FormCreate(Sender: TObject);
 begin
   FButtonHeight := 50;
@@ -193,12 +132,10 @@ begin
   FButton := TButton<TComponentButtonSubMenu>.New(Self);
 end;
 
-//function TComponentButtonSubMenu.Image(Value: string): TComponentButtonSubMenu;
-//begin
-//  Result := Self;
-//  FImage := Value;
-//  TUtils.ResourceImage(Value, ImageInfo);
-//end;
+procedure TComponentButtonSubMenu.FormDestroy(Sender: TObject);
+begin
+  FStyles.Free;
+end;
 
 procedure TComponentButtonSubMenu.Layout1Resize(Sender: TObject);
 begin
@@ -214,6 +151,15 @@ begin
     lytImageMenu.Visible := True
   else
     lytImageMenu.Visible := False;
+end;
+
+function TComponentButtonSubMenu.LoadStyles(
+  Value: string): TComponentButtonSubMenu;
+begin
+  Result := Self;
+  FStyles := TCompponentButtonStyles.Create;
+  FButton := IButton<TComponentButtonSubMenu>(FStyles.Styles.GetStyle(Value));
+  FButton.Parent(Self);
 end;
 
 procedure TComponentButtonSubMenu.lytButtonClick(Sender: TObject);
