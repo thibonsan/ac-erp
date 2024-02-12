@@ -32,7 +32,11 @@ uses
   acerp.view.components.attributes.button in 'src\view\components\attributes\acerp.view.components.attributes.button.pas',
   acerp.view.components.button in 'src\view\components\buttons\buttonmenu\acerp.view.components.button.pas' {ComponentButton: TFrame},
   acerp.view.components.buttonsubmenu in 'src\view\components\buttons\buttonsubmenu\acerp.view.components.buttonsubmenu.pas' {ComponentButtonSubMenu},
-  acerp.view.components.buttons.styles in 'src\view\components\buttons\acerp.view.components.buttons.styles.pas';
+  acerp.view.components.buttons.styles in 'src\view\components\buttons\acerp.view.components.buttons.styles.pas',
+  acerp.resources.interfaces in 'src\resources\acerp.resources.interfaces.pas',
+  acerp.resources.impl.conexaofiredac in 'src\resources\impl\acerp.resources.impl.conexaofiredac.pas',
+  acerp.resources.impl.configuracao in 'src\resources\impl\acerp.resources.impl.configuracao.pas',
+  acerp.resources.impl.resource in 'src\resources\impl\acerp.resources.impl.resource.pas';
 
 {$R *.res}
 

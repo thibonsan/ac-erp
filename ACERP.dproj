@@ -217,6 +217,10 @@
             <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="src\view\components\buttons\acerp.view.components.buttons.styles.pas"/>
+        <DCCReference Include="src\resources\acerp.resources.interfaces.pas"/>
+        <DCCReference Include="src\resources\impl\acerp.resources.impl.conexaofiredac.pas"/>
+        <DCCReference Include="src\resources\impl\acerp.resources.impl.configuracao.pas"/>
+        <DCCReference Include="src\resources\impl\acerp.resources.impl.resource.pas"/>
         <RcItem Include="src\asserts\banco.png">
             <ResourceType>RCDATA</ResourceType>
             <ResourceId>banco</ResourceId>
