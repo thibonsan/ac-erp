@@ -17,7 +17,6 @@ type
     Layout2: TLayout;
     lytBody: TLayout;
     recBackground: TRectangle;
-    Button1: TButton;
   private
     procedure RenderSidebar;
     procedure MultiViewShow;

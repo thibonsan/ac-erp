@@ -38,6 +38,7 @@ implementation
 
 uses
   Router4D,
+  Router4D.Props,
   System.Generics.Collections,
   acerp.view.components.button, acerp.view.styles,
   acerp.view.components.buttonsubmenu, acerp.view.pages.menugenerico;
@@ -88,6 +89,22 @@ begin
                     FOnMenuHide;
 
                   TRouter4D.Link.&To('ListaPessoas');
+                end)
+              .&End
+              .Build)
+          .AddSubMenu(
+            TComponentButtonSubMenu.Create(Self)
+              .LoadStyles('ComponentButtonSubMenu')
+              .Button
+                .Descricao('Empresas')
+                .DescricaoMenu('E')
+                .Click(procedure (Sender: TObject)
+                begin
+
+                  if Assigned(FOnMenuHide) then
+                    FOnMenuHide;
+
+                  TRouter4D.Link.&To('Empresa', TProps.Create.PropString(EmptyStr).Key('NOVO'));
                 end)
               .&End
               .Build)

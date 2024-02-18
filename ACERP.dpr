@@ -36,7 +36,10 @@ uses
   acerp.resources.interfaces in 'src\resources\acerp.resources.interfaces.pas',
   acerp.resources.impl.conexaofiredac in 'src\resources\impl\acerp.resources.impl.conexaofiredac.pas',
   acerp.resources.impl.configuracao in 'src\resources\impl\acerp.resources.impl.configuracao.pas',
-  acerp.resources.impl.resource in 'src\resources\impl\acerp.resources.impl.resource.pas';
+  acerp.resources.impl.resource in 'src\resources\impl\acerp.resources.impl.resource.pas',
+  acerp.view.components.edits2 in 'src\view\components\edits\acerp.view.components.edits2.pas' {ComponentEdit2},
+  acerp.view.components.editarea in 'src\view\components\edits\acerp.view.components.editarea.pas' {ComponentEditArea},
+  acerp.view.pages.empresa in 'src\view\pages\empresa\acerp.view.pages.empresa.pas' {PageEmpresa};
 
 {$R *.res}
 

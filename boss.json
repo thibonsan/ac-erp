@@ -6,6 +6,7 @@
 	"mainsrc": "./src",
 	"projects": [],
 	"dependencies": {
+		"https://github.com/academiadocodigo/localcache4d": "^1.0.4",
 		"https://github.com/academiadocodigo/router4delphi": "^1.0.8",
 		"https://github.com/alepmedeiros/chart4delphi": "^v1.0.0"
 	}

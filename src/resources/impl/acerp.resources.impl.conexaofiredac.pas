@@ -14,17 +14,18 @@ type
     FConn: TFDConnection;
     FConf: IConfiguracao;
 
-    constructor Create(Conf: IConfiguracao);
+    constructor Create;
     destructor Destroy; override;
   public
-    class function New(Conf: IConfiguracao): IConexao;
+    class function New: IConexao;
     function Connect: TcustomConnection;
   end;
 
 implementation
 
 uses
-  System.SysUtils;
+  System.SysUtils,
+  acerp.resources.impl.configuracao;
 
 { TConexaoFiredac }
 
@@ -33,9 +34,9 @@ begin
   Result := FConn;
 end;
 
-constructor TConexaoFiredac.Create(Conf: IConfiguracao);
+constructor TConexaoFiredac.Create;
 begin
-  FConf := Conf;
+  FConf := TConfiguracao.New;
   FConn := TFDConnection.Create(nil);
 
   try
@@ -58,9 +59,9 @@ begin
   inherited;
 end;
 
-class function TConexaoFiredac.New(Conf: IConfiguracao): IConexao;
+class function TConexaoFiredac.New: IConexao;
 begin
-  Result := Self.Create(Conf);
+  Result := Self.Create;
 end;
 
 end.

@@ -32,7 +32,6 @@ type
 
  IResource = interface
    function Conexao: IConexao;
-   function Configuracao: IConfiguracao;
  end;
 
 implementation

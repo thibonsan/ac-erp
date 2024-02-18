@@ -35,12 +35,6 @@ object PageLayout: TPageLayout
         Size.Height = 60.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
-        object Button1: TButton
-          Position.X = 64.000000000000000000
-          Position.Y = 24.000000000000000000
-          TabOrder = 0
-          Text = 'Button1'
-        end
       end
       object lytBody: TLayout
         Align = Client
@@ -51,7 +45,6 @@ object PageLayout: TPageLayout
       end
     end
     object MultiView1: TMultiView
-      MasterButton = Button1
       NavigationPaneOptions.CollapsedWidth = 80.000000000000000000
       Size.Width = 250.000000000000000000
       Size.Height = 50.000000000000000000

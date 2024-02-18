@@ -10,13 +10,9 @@ type
   TResource = class(TInterfacedObject, IResource)
   private
     FConexao: IConexao;
-    FConfiguracao: IConfiguracao;
-
-    constructor Create;
   public
     class function New: IResource;
     function Conexao: IConexao;
-    function Configuracao: IConfiguracao;
   end;
 
 implementation
@@ -31,24 +27,14 @@ function TResource.Conexao: IConexao;
 begin
 
   if not Assigned(FConexao) then
-    FConexao := TConexaoFiredac.New(FConfiguracao);
+    FConexao := TConexaoFiredac.New;
 
   Result := FConexao;
 end;
 
-function TResource.Configuracao: IConfiguracao;
-begin
-  Result := FConfiguracao;
-end;
-
-constructor TResource.Create;
-begin
-  FConfiguracao := TConfiguracao.New;
-end;
-
 class function TResource.New: IResource;
 begin
-
+  Result := Self.Create;
 end;
 
 end.
