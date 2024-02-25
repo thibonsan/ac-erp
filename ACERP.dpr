@@ -39,7 +39,9 @@ uses
   acerp.resources.impl.resource in 'src\resources\impl\acerp.resources.impl.resource.pas',
   acerp.view.components.edits2 in 'src\view\components\edits\acerp.view.components.edits2.pas' {ComponentEdit2},
   acerp.view.components.editarea in 'src\view\components\edits\acerp.view.components.editarea.pas' {ComponentEditArea},
-  acerp.view.pages.empresa in 'src\view\pages\empresa\acerp.view.pages.empresa.pas' {PageEmpresa};
+  acerp.view.pages.empresa in 'src\view\pages\empresa\acerp.view.pages.empresa.pas' {PageEmpresa},
+  acerp.core.entities.empresa in 'src\core\entities\acerp.core.entities.empresa.pas',
+  acerp.view.components.cardsgraficos2 in 'src\view\components\cardsgraficos\acerp.view.components.cardsgraficos2.pas' {ComponentCardGraficos2};
 
 {$R *.res}
 

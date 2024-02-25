@@ -233,6 +233,11 @@
             <Form>PageEmpresa</Form>
             <FormType>fmx</FormType>
         </DCCReference>
+        <DCCReference Include="src\core\entities\acerp.core.entities.empresa.pas"/>
+        <DCCReference Include="src\view\components\cardsgraficos\acerp.view.components.cardsgraficos2.pas">
+            <Form>ComponentCardGraficos2</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
         <RcItem Include="src\asserts\banco.png">
             <ResourceType>RCDATA</ResourceType>
             <ResourceId>banco</ResourceId>

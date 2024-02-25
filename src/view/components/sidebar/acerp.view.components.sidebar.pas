@@ -22,6 +22,7 @@ type
     FMultiView: TMultiView;
     FOnMenuShow: TProc;
     FOnMenuHide: TProc;
+    FProc: TProc<TObject>;
 
     procedure ConstruirMenu;
     procedure ConstruirPerfil;
@@ -29,6 +30,7 @@ type
     class function New(AOwner: TComponent): TComponentSidebar;
     function OnMenuShow(Value: TProc): TComponentSidebar;
     function OnMenuHide(Value: TProc): TComponentSidebar;
+    function Click(Value: TProc<TObject>): TComponentSidebar;
     function Component:TFMXObject;
   end;
 
@@ -44,6 +46,12 @@ uses
   acerp.view.components.buttonsubmenu, acerp.view.pages.menugenerico;
 
 { TComponentSidebar }
+
+function TComponentSidebar.Click(Value: TProc<TObject>): TComponentSidebar;
+begin
+  Result := Self;
+  FProc := Value;
+end;
 
 function TComponentSidebar.Component: TFMXObject;
 begin
@@ -65,7 +73,9 @@ begin
             .Descricao('Dashboard')
             .Click(procedure (Sender: TObject)
               begin
-                TRouter4D.Link.&To('Home');
+
+                if Assigned(FProc) then
+                  FProc(Sender);
               end)
           .&End
           .Build)

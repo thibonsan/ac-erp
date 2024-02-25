@@ -20,9 +20,9 @@ type
   TPageHome = class(TForm, iRouter4DComponent)
     lytContainer: TLayout;
     lytCards: TLayout;
-    lytGraficos: TLayout;
     lytCardLeft: TLayout;
     lytCardRight: TLayout;
+    lytGraficos: TFlowLayout;
     procedure lytCardsResize(Sender: TObject);
     procedure lytCardLeftResize(Sender: TObject);
     procedure lytCardRightResize(Sender: TObject);
@@ -41,7 +41,7 @@ implementation
 {$R *.fmx}
 
 uses acerp.view.components.cards, acerp.view.components.cardsgraficos,
-  acerp.services.enums;
+  acerp.services.enums, acerp.view.components.cardsgraficos2;
 
 { TPageHome }
 
@@ -94,9 +94,21 @@ end;
 
 procedure TPageHome.CarregaGraficos;
 begin
+
   lytGraficos.AddObject(
-    TComponentCardGraficos.New(Self)
-      .Nome('financial')
+    TComponentCardGraficos2.New(Self)
+      .TituloInfo('+18')
+      .TituloDescricao('$34,657')
+      .TituloGrafico('TOTAL EARNINGS IN LAST TEN QUARTERS')
+      .DescricaoRodape('Financial Statistics')
+      .ImagemRodape('mais')
+      .TipoGrafico(TChartType.Lines)
+      .MargemRigth(10)
+      .Largura(340, 400)
+      .Build);
+
+  lytGraficos.AddObject(
+    TComponentCardGraficos2.New(Self)
       .TituloInfo('+18')
       .TituloDescricao('$34,657')
       .TituloGrafico('TOTAL EARNINGS IN LAST TEN QUARTERS')
@@ -104,6 +116,33 @@ begin
       .ImagemRodape('mais')
       .Alinhamento(TAlignLayout.Left)
       .TipoGrafico(TChartType.Lines)
+      .MargemRigth(10)
+      .Largura(340, 400)
+      .Build);
+
+  lytGraficos.AddObject(
+    TComponentCardGraficos2.New(Self)
+      .TituloInfo('+18')
+      .TituloDescricao('$34,657')
+      .TituloGrafico('TOTAL EARNINGS IN LAST TEN QUARTERS')
+      .DescricaoRodape('Financial Statistics')
+      .ImagemRodape('mais')
+      .Alinhamento(TAlignLayout.Left)
+      .TipoGrafico(TChartType.Lines)
+      .MargemRigth(10)
+      .Largura(340, 400)
+      .Build);
+
+  lytGraficos.AddObject(
+    TComponentCardGraficos2.New(Self)
+      .TituloInfo('+18')
+      .TituloDescricao('$34,657')
+      .TituloGrafico('TOTAL EARNINGS IN LAST TEN QUARTERS')
+      .DescricaoRodape('Financial Statistics')
+      .ImagemRodape('mais')
+      .Alinhamento(TAlignLayout.Left)
+      .TipoGrafico(TChartType.Lines)
+      .Largura(340, 400)
       .Build);
 end;
 
