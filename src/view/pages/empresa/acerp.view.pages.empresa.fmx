@@ -117,6 +117,7 @@ object PageEmpresa: TPageEmpresa
                 Size.Height = 40.000000000000000000
                 Size.PlatformDefault = False
                 TabOrder = 1
+                OnClick = lytButtonClick
                 OnMouseEnter = lytButtonMouseEnter
                 OnMouseLeave = lytButtonMouseLeave
               end

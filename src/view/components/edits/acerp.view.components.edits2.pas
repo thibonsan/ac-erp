@@ -15,8 +15,11 @@ type
     Rectangle1: TRectangle;
     edtText: TEdit;
     procedure edtTextChange(Sender: TObject);
+    procedure edtTextKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
+      Shift: TShiftState);
   private
     FChange: TProc<TObject>;
+    FField: ^string;
   public
     class function New(AOwner: TComponent): iEdits;
     function Nome(Value: string): iEdits;
@@ -25,6 +28,7 @@ type
     function BackgroundColor(Value: TAlphaColor = $FFFFFFFF): iEdits;
     function Enable(Value: Boolean = False): iEdits;
     function Change(Value: TProc<TObject>): iEdits;
+    function FieldValue(var AField: string): iEdits;
     function Alinhamento(Value: TAlignLayout): iEdits;
     function VertText(Value: TTextAlign): iEdits;
     function HorzText(Value: TTextAlign): iEdits;
@@ -75,11 +79,23 @@ begin
     FChange(Sender);
 end;
 
+procedure TComponentEdit2.edtTextKeyUp(Sender: TObject; var Key: Word;
+  var KeyChar: Char; Shift: TShiftState);
+begin
+  FField^ := edtText.Text;
+end;
+
 function TComponentEdit2.Enable(Value: Boolean): iEdits;
 begin
   Result := Self;
   Rectangle1.Fill.Color := $FFE3E3E3;
   edtText.Enabled := Value;
+end;
+
+function TComponentEdit2.FieldValue(var AField: string): iEdits;
+begin
+  Result := Self;
+  FField := @AField;
 end;
 
 function TComponentEdit2.FontColor(Value: TAlphaColor): iEdits;

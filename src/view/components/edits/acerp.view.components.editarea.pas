@@ -25,6 +25,7 @@ type
     function BackgroundColor(Value: TAlphaColor = $FFFFFFFF): iEdits;
     function Enable(Value: Boolean = False): iEdits;
     function Change(Value: TProc<TObject>): iEdits;
+    function FieldValue(var AField: string): iEdits;
     function Alinhamento(Value: TAlignLayout): iEdits;
     function VertText(Value: TTextAlign): iEdits;
     function HorzText(Value: TTextAlign): iEdits;
@@ -80,6 +81,11 @@ begin
   Result := Self;
   Rectangle1.Fill.Color := $FFE3E3E3;
   edtText.Enabled := Value;
+end;
+
+function TComponentEditArea.FieldValue(var AField: string): iEdits;
+begin
+//
 end;
 
 function TComponentEditArea.FontColor(Value: TAlphaColor): iEdits;

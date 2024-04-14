@@ -8,7 +8,7 @@ uses
 type
 
  IConexao = interface
-   function Connect: TCustomConnection;
+   function Query(const Statement: string; const Params: array of Variant): TDataSet;
  end;
 
  IConfiguracao = interface

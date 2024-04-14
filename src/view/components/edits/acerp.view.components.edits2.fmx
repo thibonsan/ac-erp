@@ -50,6 +50,7 @@ object ComponentEdit2: TComponentEdit2
         Size.PlatformDefault = False
         StyledSettings = [Family, Style, FontColor]
         OnChange = edtTextChange
+        OnKeyUp = edtTextKeyUp
       end
     end
   end

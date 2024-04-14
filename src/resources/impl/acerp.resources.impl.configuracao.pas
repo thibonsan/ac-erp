@@ -54,12 +54,12 @@ procedure TConfiguracao.CreateStructure;
 begin
   LocalCache
     .Instance('Config')
-    .SetItem('DriverId', '')
-    .SetItem('DataBase', '')
-    .SetItem('UserName', '')
-    .SetItem('Password', '')
-    .SetItem('Port', '')
-    .SetItem('Server', '')
+    .SetItem('DriverId', 'PG')
+    .SetItem('DataBase', 'postgres')
+    .SetItem('UserName', 'postgres')
+    .SetItem('Password', 'postgres')
+    .SetItem('Port', '5432')
+    .SetItem('Server', 'localhost')
     .SetItem('Schema', '')
     .SetItem('Locking', '')
     .SaveToStorage(ExtractFilePath(ParamStr(0) + 'conf.lc4'));

@@ -38,6 +38,7 @@ type
     function BackgroundColor(VAlue: TAlphaColor = $FFFFFFFF): iEdits;
     function Enable(Value: Boolean = False): iEdits;
     function Change(Value: TProc<TObject>): iEdits;
+    function FieldValue(var AField: string): iEdits;
     function Alinhamento(Value: TAlignLayout): iEdits;
     function VertText(VAlue: TTextAlign): iEdits;
     function HorzText(Value: TTextAlign): iEdits;
@@ -88,6 +89,11 @@ function TComponentEditImage.Enable(Value: Boolean): iEdits;
 begin
   Result := Self;
   Rectanglecontainer.Enabled := Value;
+end;
+
+function TComponentEditImage.FieldValue(var AField: string): iEdits;
+begin
+//
 end;
 
 function TComponentEditImage.FontColor(Value: TAlphaColor): iEdits;

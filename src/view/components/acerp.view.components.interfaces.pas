@@ -25,6 +25,7 @@ type
     function Enable(Value: Boolean = False): iEdits;
     function Change(Value: TProc<TObject>): iEdits;
     function Alinhamento(Value: TAlignLayout): iEdits;
+    function FieldValue(var AField: string): iEdits;
     function VertText(Value: TTextAlign): iEdits;
     function HorzText(Value: TTextAlign): iEdits;
     function Largura(Value: Integer): iEdits;
